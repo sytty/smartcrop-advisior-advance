@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "Đang tải...",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "export": "Xuất",
+    "filter": "Lọc",
+    "search": "Tìm kiếm...",
+    "status": "Trạng thái",
+    "action": "Hành động",
+    "date": "Ngày",
+    "success": "Thành công",
+    "error": "Lỗi",
+    "back": "Quay lại"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "features": "Tính năng",
+    "dashboard": "Bảng điều khiển",
+    "pricing": "Bảng giá",
+    "contact": "Liên hệ",
+    "tools": "Công cụ",
+    "analytics": "Phân tích",
+    "edgeSync": "Đồng bộ Edge",
+    "subsidies": "Trợ cấp",
+    "admin": "Quản trị viên",
+    "regional": "Khu vực",
+    "login": "Đăng nhập",
+    "signup": "Đăng ký",
+    "logout": "Đăng xuất",
+    "futuristic": "AI & Tương lai"
+  },
+  "auth": {
+    "login": { "title": "Chào mừng trở lại", "submit": "Đăng nhập" },
+    "signup": { "title": "Tạo tài khoản", "submit": "Tạo tài khoản" },
+    "passwordReset": { "title": "Đặt lại mật khẩu", "submit": "Gửi liên kết" }
+  },
+  "dashboard": {
+    "welcome": "Chào mừng trở lại",
+    "liveFeed": "Nguồn cấp dữ liệu trực tiếp"
+  },
+  "footer": {
+    "tagline": "Nông nghiệp chính xác cho mọi người",
+    "quickLinks": "Liên kết nhanh",
+    "contact": "Liên hệ",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản dịch vụ",
+    "rights": "Đã đăng ký Bản quyền",
+    "futuristicFeatures": "Tính năng Tương lai"
+  },
+  "analytics": {
+    "cropComparison": { "title": "Phân tích So sánh Cây trồng" },
+    "marketPrices": { "title": "Tích hợp Giá Thị trường" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "Bảng điều khiển Bản sao Kỹ thuật số" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "Trợ lý Giọng nói AI" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "Đơn xin Trợ cấp" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "Cổng thông tin Trợ cấp" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "Cố vấn Cây trồng AI", "subtitle": "Đề xuất cây trồng cá nhân hóa được hỗ trợ bởi lượng tử." },
+    "droneMonitoring": { "title": "Hệ thống Giám sát Drone", "subtitle": "Giám sát trên không tự trị và lập bản đồ thời gian thực." },
+    "iotSensors": { "title": "Ma trận Cảm biến IoT", "subtitle": "Đo từ xa thời gian thực từ các cảm biến hiện trường phân tán." },
+    "predictiveWeather": { "title": "Thời tiết Dự đoán AI", "subtitle": "Dự báo 30 ngày nâng cao được hỗ trợ bởi mạng nơ-ron." },
+    "diseaseDetector": { "title": "Máy dò Bệnh Cây trồng AI", "subtitle": "Tải lên hình ảnh lá để phân tích tức thì." },
+    "smartIrrigation": { "title": "Hệ thống Tưới tiêu Thông minh", "subtitle": "Quản lý nước tự động được hỗ trợ bởi đo từ xa đất." },
+    "blockchainCert": { "title": "Chứng nhận Cây trồng Blockchain", "subtitle": "Khả năng truy xuất nguồn gốc bất biến từ trang trại đến thị trường." },
+    "pestManagement": { "title": "Quản lý Dịch hại AI", "subtitle": "Mô hình hóa dịch hại dự đoán và các chiến lược diệt trừ có mục tiêu." },
+    "satelliteImagery": { "title": "Phân tích Hình ảnh Vệ tinh", "subtitle": "Lập bản đồ NDVI đa phổ và hình ảnh hóa sức khỏe cây trồng." },
+    "climateRisk": { "title": "Đánh giá Rủi ro Khí hậu", "subtitle": "Dự báo AI dài hạn cho thời tiết khắc nghiệt." },
+    "precisionFarming": { "title": "Bảng điều khiển Nông nghiệp Chính xác", "subtitle": "Ứng dụng tỷ lệ thay đổi và các số liệu quản lý vi mô." },
+    "yieldForecasting": { "title": "Dự báo Năng suất AI", "subtitle": "Mô hình hóa dự đoán đa biến cho kết quả thu hoạch." },
+    "soilMicrobiome": { "title": "Phân tích Hệ vi sinh vật Đất", "subtitle": "Đa dạng vi sinh vật cấp sâu và phát hiện mầm bệnh." },
+    "carbonFootprint": { "title": "Trình theo dõi Dấu chân Carbon", "subtitle": "Giám sát lượng khí thải và tính toán tín chỉ bù đắp carbon." },
+    "communityHub": { "title": "Mạng lưới Nông dân Toàn cầu", "subtitle": "Kết nối, chia sẻ thông tin chi tiết và học hỏi từ các chuyên gia." }
+  }
+}

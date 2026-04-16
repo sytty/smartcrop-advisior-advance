@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "export": "Export",
+    "filter": "Filter",
+    "search": "Search...",
+    "status": "Status",
+    "action": "Action",
+    "date": "Date",
+    "success": "Success",
+    "error": "Error",
+    "back": "Back"
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "dashboard": "Dashboard",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "tools": "Tools",
+    "analytics": "Analytics",
+    "edgeSync": "Edge Sync",
+    "subsidies": "Subsidies",
+    "admin": "Admin",
+    "regional": "Regional",
+    "login": "Login",
+    "signup": "Sign Up",
+    "logout": "Logout",
+    "futuristic": "AI & Future Tech"
+  },
+  "auth": {
+    "login": { "title": "Welcome back", "submit": "Sign in" },
+    "signup": { "title": "Create your account", "submit": "Create account" },
+    "passwordReset": { "title": "Reset your password", "submit": "Send reset link" }
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "liveFeed": "Live Field Feed"
+  },
+  "footer": {
+    "tagline": "Precision agriculture for everyone",
+    "quickLinks": "Quick links",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved",
+    "futuristicFeatures": "Futuristic Features"
+  },
+  "analytics": {
+    "cropComparison": { "title": "Crop Comparison Analytics" },
+    "marketPrices": { "title": "Market Price Integration" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "Digital Twin Dashboard" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "AI Voice Assistant" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "Subsidy Application" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "Subsidy Portal" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "AI Crop Advisor", "subtitle": "Quantum-powered personalized crop recommendations." },
+    "droneMonitoring": { "title": "Drone Monitoring System", "subtitle": "Autonomous aerial surveillance and real-time mapping." },
+    "iotSensors": { "title": "IoT Sensor Matrix", "subtitle": "Real-time telemetry from distributed field sensors." },
+    "predictiveWeather": { "title": "Predictive Weather AI", "subtitle": "Advanced 30-day forecasting powered by neural networks." },
+    "diseaseDetector": { "title": "Crop Disease AI Detector", "subtitle": "Upload leaf imagery for instant neural network analysis." },
+    "smartIrrigation": { "title": "Smart Irrigation System", "subtitle": "Automated water management powered by soil telemetry." },
+    "blockchainCert": { "title": "Blockchain Crop Certification", "subtitle": "Immutable traceability from farm to market." },
+    "pestManagement": { "title": "AI Pest Management", "subtitle": "Predictive pest modeling and targeted eradication strategies." },
+    "satelliteImagery": { "title": "Satellite Imagery Analysis", "subtitle": "Multispectral NDVI mapping and crop health visualization." },
+    "climateRisk": { "title": "Climate Risk Assessment", "subtitle": "Long-term AI projections for extreme weather and climate shifts." },
+    "precisionFarming": { "title": "Precision Farming Dashboard", "subtitle": "Variable rate application and micro-management metrics." },
+    "yieldForecasting": { "title": "AI Yield Forecasting", "subtitle": "Multi-variable predictive modeling for harvest outcomes." },
+    "soilMicrobiome": { "title": "Soil Microbiome Analysis", "subtitle": "Deep-level microbial diversity and pathogen detection." },
+    "carbonFootprint": { "title": "Carbon Footprint Tracker", "subtitle": "Monitor emissions and calculate carbon offset credits." },
+    "communityHub": { "title": "Global Farmer Network", "subtitle": "Connect, share insights, and learn from precision agriculture experts." }
+  }
+}

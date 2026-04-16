@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "読み込み中...",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "export": "エクスポート",
+    "filter": "フィルター",
+    "search": "検索...",
+    "status": "ステータス",
+    "action": "アクション",
+    "date": "日付",
+    "success": "成功",
+    "error": "エラー",
+    "back": "戻る"
+  },
+  "nav": {
+    "home": "ホーム",
+    "features": "機能",
+    "dashboard": "ダッシュボード",
+    "pricing": "料金",
+    "contact": "お問い合わせ",
+    "tools": "ツール",
+    "analytics": "分析",
+    "edgeSync": "エッジ同期",
+    "subsidies": "補助金",
+    "admin": "管理者",
+    "regional": "地域",
+    "login": "ログイン",
+    "signup": "サインアップ",
+    "logout": "ログアウト",
+    "futuristic": "AIと未来"
+  },
+  "auth": {
+    "login": { "title": "お帰りなさい", "submit": "ログイン" },
+    "signup": { "title": "アカウント作成", "submit": "作成する" },
+    "passwordReset": { "title": "パスワードのリセット", "submit": "リンクを送信" }
+  },
+  "dashboard": {
+    "welcome": "お帰りなさい",
+    "liveFeed": "ライブフィード"
+  },
+  "footer": {
+    "tagline": "すべての人のための精密農業",
+    "quickLinks": "クイックリンク",
+    "contact": "お問い合わせ",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "rights": "無断転載を禁じます",
+    "futuristicFeatures": "未来的な機能"
+  },
+  "analytics": {
+    "cropComparison": { "title": "作物比較分析" },
+    "marketPrices": { "title": "市場価格の統合" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "デジタルツインダッシュボード" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "AI音声アシスタント" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "補助金申請" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "補助金ポータル" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "AI作物アドバイザー", "subtitle": "量子を活用したパーソナライズされた作物の推奨。" },
+    "droneMonitoring": { "title": "ドローン監視システム", "subtitle": "自律的な航空監視とリアルタイムマッピング。" },
+    "iotSensors": { "title": "IoTセンサーマトリックス", "subtitle": "分散型フィールドセンサーからのリアルタイムテレメトリ。" },
+    "predictiveWeather": { "title": "予測気象AI", "subtitle": "ニューラルネットワークによる高度な30日間の予測。" },
+    "diseaseDetector": { "title": "作物病害AI検出器", "subtitle": "葉の画像をアップロードして即座に分析します。" },
+    "smartIrrigation": { "title": "スマート灌漑システム", "subtitle": "土壌テレメトリによる自動水管理。" },
+    "blockchainCert": { "title": "ブロックチェーン作物認証", "subtitle": "農場から市場までの不変のトレーサビリティ。" },
+    "pestManagement": { "title": "AI害虫管理", "subtitle": "予測的な害虫モデリングと標的型根絶戦略。" },
+    "satelliteImagery": { "title": "衛星画像分析", "subtitle": "マルチスペクトルNDVIマッピングと作物の健康状態の視覚化。" },
+    "climateRisk": { "title": "気候リスク評価", "subtitle": "極端な気象に対する長期的なAI予測。" },
+    "precisionFarming": { "title": "精密農業ダッシュボード", "subtitle": "可変レート適用とマイクロ管理メトリクス。" },
+    "yieldForecasting": { "title": "AI収量予測", "subtitle": "収穫結果のための多変数予測モデリング。" },
+    "soilMicrobiome": { "title": "土壌マイクロバイオーム分析", "subtitle": "深層レベルの微生物の多様性と病原体の検出。" },
+    "carbonFootprint": { "title": "カーボンフットプリントトラッカー", "subtitle": "排出量を監視し、カーボンオフセットクレジットを計算します。" },
+    "communityHub": { "title": "グローバルファーマーネットワーク", "subtitle": "つながり、洞察を共有し、専門家から学びます。" }
+  }
+}

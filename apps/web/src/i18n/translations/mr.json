@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "लोड होत आहे...",
+    "save": "जतन करा",
+    "cancel": "रद्द करा",
+    "export": "निर्यात करा",
+    "filter": "फिल्टर",
+    "search": "शोधा...",
+    "status": "स्थिती",
+    "action": "कृती",
+    "date": "तारीख",
+    "success": "यश",
+    "error": "त्रुटी",
+    "back": "मागे"
+  },
+  "nav": {
+    "home": "मुख्यपृष्ठ",
+    "features": "वैशिष्ट्ये",
+    "dashboard": "डॅशबोर्ड",
+    "pricing": "किंमत",
+    "contact": "संपर्क",
+    "tools": "साधने",
+    "analytics": "विश्लेषण",
+    "edgeSync": "एज सिंक",
+    "subsidies": "अनुदान",
+    "admin": "प्रशासक",
+    "regional": "प्रादेशिक",
+    "login": "लॉगिन",
+    "signup": "साइन अप",
+    "logout": "लॉग आउट",
+    "futuristic": "AI आणि भविष्य"
+  },
+  "auth": {
+    "login": { "title": "पुन्हा स्वागत आहे", "submit": "साइन इन करा" },
+    "signup": { "title": "तुमचे खाते तयार करा", "submit": "खाते तयार करा" },
+    "passwordReset": { "title": "तुमचा पासवर्ड रीसेट करा", "submit": "रीसेट लिंक पाठवा" }
+  },
+  "dashboard": {
+    "welcome": "पुन्हा स्वागत आहे",
+    "liveFeed": "थेट फीड"
+  },
+  "footer": {
+    "tagline": "सर्वांसाठी अचूक शेती",
+    "quickLinks": "त्वरित दुवे",
+    "contact": "संपर्क",
+    "privacy": "गोपनीयता धोरण",
+    "terms": "सेवा अटी",
+    "rights": "सर्व हक्क राखीव",
+    "futuristicFeatures": "भविष्यातील वैशिष्ट्ये"
+  },
+  "analytics": {
+    "cropComparison": { "title": "पीक तुलना विश्लेषण" },
+    "marketPrices": { "title": "बाजारभाव एकत्रीकरण" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "डिजिटल ट्विन डॅशबोर्ड" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "AI व्हॉइस असिस्टंट" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "अनुदान अर्ज" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "अनुदान पोर्टल" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "AI पीक सल्लागार", "subtitle": "क्वांटम-सक्षम वैयक्तिकृत पीक शिफारसी." },
+    "droneMonitoring": { "title": "ड्रोन मॉनिटरिंग सिस्टम", "subtitle": "स्वायत्त हवाई पाळत ठेवणे आणि रिअल-टाइम मॅपिंग." },
+    "iotSensors": { "title": "IoT सेन्सर मॅट्रिक्स", "subtitle": "वितरित फील्ड सेन्सरवरून रिअल-टाइम टेलिमेट्री." },
+    "predictiveWeather": { "title": "अंदाज हवामान AI", "subtitle": "न्यूरल नेटवर्कद्वारे समर्थित प्रगत 30-दिवसांचा अंदाज." },
+    "diseaseDetector": { "title": "पीक रोग AI डिटेक्टर", "subtitle": "त्वरित विश्लेषणासाठी पानांच्या प्रतिमा अपलोड करा." },
+    "smartIrrigation": { "title": "स्मार्ट सिंचन प्रणाली", "subtitle": "माती टेलिमेट्रीद्वारे समर्थित स्वयंचलित पाणी व्यवस्थापन." },
+    "blockchainCert": { "title": "ब्लॉकचेन पीक प्रमाणन", "subtitle": "शेतापासून बाजारापर्यंत अपरिवर्तनीय शोधण्यायोग्यता." },
+    "pestManagement": { "title": "AI कीटक व्यवस्थापन", "subtitle": "अंदाज कीटक मॉडेलिंग आणि लक्ष्यित निर्मूलन धोरणे." },
+    "satelliteImagery": { "title": "उपग्रह इमेजरी विश्लेषण", "subtitle": "मल्टीस्पेक्ट्रल NDVI मॅपिंग आणि पीक आरोग्य दृश्य." },
+    "climateRisk": { "title": "हवामान जोखीम मूल्यांकन", "subtitle": "अत्यंत हवामान आणि हवामान बदलांसाठी दीर्घकालीन AI अंदाज." },
+    "precisionFarming": { "title": "अचूक शेती डॅशबोर्ड", "subtitle": "व्हेरिएबल रेट ऍप्लिकेशन आणि मायक्रो-मॅनेजमेंट मेट्रिक्स." },
+    "yieldForecasting": { "title": "AI उत्पन्न अंदाज", "subtitle": "कापणीच्या परिणामांसाठी बहु-चल अंदाज मॉडेलिंग." },
+    "soilMicrobiome": { "title": "माती मायक्रोबायोम विश्लेषण", "subtitle": "खोल-स्तरीय सूक्ष्मजीव विविधता आणि रोगजनक शोध." },
+    "carbonFootprint": { "title": "कार्बन फूटप्रिंट ट्रॅकर", "subtitle": "उत्सर्जनाचे निरीक्षण करा आणि कार्बन ऑफसेट क्रेडिट्सची गणना करा." },
+    "communityHub": { "title": "ग्लोबल फार्मर नेटवर्क", "subtitle": "कनेक्ट करा, अंतर्दृष्टी सामायिक करा आणि तज्ञांकडून शिका." }
+  }
+}

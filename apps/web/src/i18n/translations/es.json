@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "export": "Exportar",
+    "filter": "Filtrar",
+    "search": "Buscar...",
+    "status": "Estado",
+    "action": "Acción",
+    "date": "Fecha",
+    "success": "Éxito",
+    "error": "Error",
+    "back": "Volver"
+  },
+  "nav": {
+    "home": "Inicio",
+    "features": "Características",
+    "dashboard": "Panel",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "tools": "Herramientas",
+    "analytics": "Analítica",
+    "edgeSync": "Sincronización Edge",
+    "subsidies": "Subsidios",
+    "admin": "Admin",
+    "regional": "Regional",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse",
+    "logout": "Cerrar sesión",
+    "futuristic": "IA y Futuro"
+  },
+  "auth": {
+    "login": { "title": "Bienvenido de nuevo", "submit": "Iniciar sesión" },
+    "signup": { "title": "Crea tu cuenta", "submit": "Crear cuenta" },
+    "passwordReset": { "title": "Restablecer su contraseña", "submit": "Enviar enlace" }
+  },
+  "dashboard": {
+    "welcome": "Bienvenido de nuevo",
+    "liveFeed": "Feed en vivo"
+  },
+  "footer": {
+    "tagline": "Agricultura de precisión para todos",
+    "quickLinks": "Enlaces rápidos",
+    "contact": "Contacto",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de servicio",
+    "rights": "Todos los derechos reservados",
+    "futuristicFeatures": "Características Futuristas"
+  },
+  "analytics": {
+    "cropComparison": { "title": "Análisis de Comparación de Cultivos" },
+    "marketPrices": { "title": "Integración de Precios de Mercado" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "Panel Gemelo Digital" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "Asistente de Voz de IA" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "Solicitud de Subsidio" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "Portal de Subsidios" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "Asesor de Cultivos IA", "subtitle": "Recomendaciones de cultivos personalizadas impulsadas por IA." },
+    "droneMonitoring": { "title": "Sistema de Monitoreo con Drones", "subtitle": "Vigilancia aérea autónoma y mapeo en tiempo real." },
+    "iotSensors": { "title": "Matriz de Sensores IoT", "subtitle": "Telemetría en tiempo real de sensores de campo distribuidos." },
+    "predictiveWeather": { "title": "Clima Predictivo IA", "subtitle": "Pronóstico avanzado de 30 días impulsado por redes neuronales." },
+    "diseaseDetector": { "title": "Detector de Enfermedades IA", "subtitle": "Cargue imágenes de hojas para análisis instantáneo." },
+    "smartIrrigation": { "title": "Sistema de Riego Inteligente", "subtitle": "Gestión automatizada del agua impulsada por telemetría del suelo." },
+    "blockchainCert": { "title": "Certificación de Cultivos Blockchain", "subtitle": "Trazabilidad inmutable de la granja al mercado." },
+    "pestManagement": { "title": "Manejo de Plagas IA", "subtitle": "Modelado predictivo de plagas y estrategias de erradicación." },
+    "satelliteImagery": { "title": "Análisis de Imágenes Satelitales", "subtitle": "Mapeo multiespectral NDVI y visualización de salud." },
+    "climateRisk": { "title": "Evaluación de Riesgo Climático", "subtitle": "Proyecciones de IA a largo plazo para clima extremo." },
+    "precisionFarming": { "title": "Panel de Agricultura de Precisión", "subtitle": "Aplicación de tasa variable y métricas de microgestión." },
+    "yieldForecasting": { "title": "Pronóstico de Rendimiento IA", "subtitle": "Modelado predictivo multivariable para resultados de cosecha." },
+    "soilMicrobiome": { "title": "Análisis del Microbioma del Suelo", "subtitle": "Diversidad microbiana de nivel profundo y detección de patógenos." },
+    "carbonFootprint": { "title": "Rastreador de Huella de Carbono", "subtitle": "Monitoree emisiones y calcule créditos de compensación." },
+    "communityHub": { "title": "Red Global de Agricultores", "subtitle": "Conéctese, comparta conocimientos y aprenda de expertos." }
+  }
+}

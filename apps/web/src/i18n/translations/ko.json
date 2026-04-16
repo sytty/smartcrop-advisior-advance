@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "로딩 중...",
+    "save": "저장",
+    "cancel": "취소",
+    "export": "내보내기",
+    "filter": "필터",
+    "search": "검색...",
+    "status": "상태",
+    "action": "작업",
+    "date": "날짜",
+    "success": "성공",
+    "error": "오류",
+    "back": "뒤로"
+  },
+  "nav": {
+    "home": "홈",
+    "features": "기능",
+    "dashboard": "대시보드",
+    "pricing": "가격",
+    "contact": "연락처",
+    "tools": "도구",
+    "analytics": "분석",
+    "edgeSync": "에지 동기화",
+    "subsidies": "보조금",
+    "admin": "관리자",
+    "regional": "지역",
+    "login": "로그인",
+    "signup": "가입하기",
+    "logout": "로그아웃",
+    "futuristic": "AI 및 미래"
+  },
+  "auth": {
+    "login": { "title": "환영합니다", "submit": "로그인" },
+    "signup": { "title": "계정 만들기", "submit": "계정 생성" },
+    "passwordReset": { "title": "비밀번호 재설정", "submit": "링크 보내기" }
+  },
+  "dashboard": {
+    "welcome": "환영합니다",
+    "liveFeed": "라이브 피드"
+  },
+  "footer": {
+    "tagline": "모두를 위한 정밀 농업",
+    "quickLinks": "빠른 링크",
+    "contact": "연락처",
+    "privacy": "개인정보 보호정책",
+    "terms": "서비스 약관",
+    "rights": "모든 권리 보유",
+    "futuristicFeatures": "미래 지향적 기능"
+  },
+  "analytics": {
+    "cropComparison": { "title": "작물 비교 분석" },
+    "marketPrices": { "title": "시장 가격 통합" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "디지털 트윈 대시보드" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "AI 음성 비서" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "보조금 신청" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "보조금 포털" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "AI 작물 고문", "subtitle": "양자 기반 맞춤형 작물 추천." },
+    "droneMonitoring": { "title": "드론 모니터링 시스템", "subtitle": "자율 항공 감시 및 실시간 매핑." },
+    "iotSensors": { "title": "IoT 센서 매트릭스", "subtitle": "분산 필드 센서의 실시간 원격 측정." },
+    "predictiveWeather": { "title": "예측 날씨 AI", "subtitle": "신경망으로 구동되는 고급 30일 예측." },
+    "diseaseDetector": { "title": "작물 질병 AI 탐지기", "subtitle": "즉각적인 분석을 위해 잎 이미지를 업로드하세요." },
+    "smartIrrigation": { "title": "스마트 관개 시스템", "subtitle": "토양 원격 측정으로 구동되는 자동 물 관리." },
+    "blockchainCert": { "title": "블록체인 작물 인증", "subtitle": "농장에서 시장까지의 불변의 추적성." },
+    "pestManagement": { "title": "AI 해충 관리", "subtitle": "예측 해충 모델링 및 표적 근절 전략." },
+    "satelliteImagery": { "title": "위성 이미지 분석", "subtitle": "다중 스펙트럼 NDVI 매핑 및 작물 건강 시각화." },
+    "climateRisk": { "title": "기후 위험 평가", "subtitle": "극한 날씨에 대한 장기 AI 예측." },
+    "precisionFarming": { "title": "정밀 농업 대시보드", "subtitle": "가변 비율 적용 및 미시 관리 지표." },
+    "yieldForecasting": { "title": "AI 수확량 예측", "subtitle": "수확 결과를 위한 다변수 예측 모델링." },
+    "soilMicrobiome": { "title": "토양 마이크로바이옴 분석", "subtitle": "심층 미생물 다양성 및 병원체 탐지." },
+    "carbonFootprint": { "title": "탄소 발자국 추적기", "subtitle": "배출량을 모니터링하고 탄소 상쇄 크레딧을 계산합니다." },
+    "communityHub": { "title": "글로벌 농부 네트워크", "subtitle": "연결하고, 통찰력을 공유하고, 전문가로부터 배웁니다." }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "Inapakia...",
+    "save": "Hifadhi",
+    "cancel": "Ghairi",
+    "export": "Hamisha",
+    "filter": "Chuja",
+    "search": "Tafuta...",
+    "status": "Hali",
+    "action": "Kitendo",
+    "date": "Tarehe",
+    "success": "Mafanikio",
+    "error": "Hitilafu",
+    "back": "Nyuma"
+  },
+  "nav": {
+    "home": "Nyumbani",
+    "features": "Vipengele",
+    "dashboard": "Dashibodi",
+    "pricing": "Bei",
+    "contact": "Wasiliana",
+    "tools": "Zana",
+    "analytics": "Uchambuzi",
+    "edgeSync": "Usawazishaji wa Edge",
+    "subsidies": "Ruzuku",
+    "admin": "Msimamizi",
+    "regional": "Kikanda",
+    "login": "Ingia",
+    "signup": "Jisajili",
+    "logout": "Toka",
+    "futuristic": "AI na Baadaye"
+  },
+  "auth": {
+    "login": { "title": "Karibu tena", "submit": "Ingia" },
+    "signup": { "title": "Unda akaunti yako", "submit": "Unda akaunti" },
+    "passwordReset": { "title": "Weka upya nenosiri lako", "submit": "Tuma kiungo" }
+  },
+  "dashboard": {
+    "welcome": "Karibu tena",
+    "liveFeed": "Mlisho wa Moja kwa Moja"
+  },
+  "footer": {
+    "tagline": "Kilimo cha usahihi kwa kila mtu",
+    "quickLinks": "Viungo vya haraka",
+    "contact": "Wasiliana",
+    "privacy": "Sera ya Faragha",
+    "terms": "Masharti ya Huduma",
+    "rights": "Haki zote zimehifadhiwa",
+    "futuristicFeatures": "Vipengele vya Baadaye"
+  },
+  "analytics": {
+    "cropComparison": { "title": "Uchambuzi wa Kulinganisha Mazao" },
+    "marketPrices": { "title": "Ushirikiano wa Bei za Soko" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "Dashibodi ya Pacha wa Dijiti" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "Msaidizi wa Sauti wa AI" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "Maombi ya Ruzuku" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "Lango la Ruzuku" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "Mshauri wa Mazao wa AI", "subtitle": "Mapendekezo ya mazao yanayotokana na AI." },
+    "droneMonitoring": { "title": "Mfumo wa Ufuatiliaji wa Droni", "subtitle": "Ufuatiliaji wa angani na ramani ya wakati halisi." },
+    "iotSensors": { "title": "Matrix ya Sensorer za IoT", "subtitle": "Data ya wakati halisi kutoka kwa sensorer za shamba." },
+    "predictiveWeather": { "title": "Hali ya Hewa ya Kutabiri ya AI", "subtitle": "Utabiri wa siku 30 unaoendeshwa na mitandao ya neva." },
+    "diseaseDetector": { "title": "Kigunduzi cha Magonjwa cha AI", "subtitle": "Pakia picha za majani kwa uchambuzi wa papo hapo." },
+    "smartIrrigation": { "title": "Mfumo wa Umwagiliaji Mahiri", "subtitle": "Usimamizi wa maji wa kiotomatiki." },
+    "blockchainCert": { "title": "Udhibitisho wa Mazao wa Blockchain", "subtitle": "Ufuatiliaji usioweza kubadilika kutoka shamba hadi soko." },
+    "pestManagement": { "title": "Usimamizi wa Wadudu wa AI", "subtitle": "Uundaji wa wadudu wa kutabiri na mikakati ya kutokomeza." },
+    "satelliteImagery": { "title": "Uchambuzi wa Picha za Satelaiti", "subtitle": "Ramani ya NDVI na taswira ya afya ya mazao." },
+    "climateRisk": { "title": "Tathmini ya Hatari ya Hali ya Hewa", "subtitle": "Makadirio ya AI ya muda mrefu kwa hali ya hewa mbaya." },
+    "precisionFarming": { "title": "Dashibodi ya Kilimo cha Usahihi", "subtitle": "Matumizi ya kiwango tofauti na vipimo vya usimamizi mdogo." },
+    "yieldForecasting": { "title": "Utabiri wa Mavuno wa AI", "subtitle": "Uundaji wa kutabiri wa anuwai kwa matokeo ya mavuno." },
+    "soilMicrobiome": { "title": "Uchambuzi wa Microbiome ya Udongo", "subtitle": "Utofauti wa vijidudu na ugunduzi wa vimelea." },
+    "carbonFootprint": { "title": "Kifuatiliaji cha Alama ya Kaboni", "subtitle": "Fuatilia uzalishaji na uhesabu mikopo ya kaboni." },
+    "communityHub": { "title": "Mtandao wa Wakulima Ulimwenguni", "subtitle": "Ungana, shiriki ufahamu, na ujifunze kutoka kwa wataalam." }
+  }
+}

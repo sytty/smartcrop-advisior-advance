@@ -1,0 +1,11 @@
+# Node.js
+node_modules/
+
+# Python
+venv/
+.venv/
+__pycache__/
+
+# Large Data/Logs
+*.log
+*.zip

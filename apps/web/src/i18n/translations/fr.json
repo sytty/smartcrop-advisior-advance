@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "export": "Exporter",
+    "filter": "Filtrer",
+    "search": "Rechercher...",
+    "status": "Statut",
+    "action": "Action",
+    "date": "Date",
+    "success": "Succès",
+    "error": "Erreur",
+    "back": "Retour"
+  },
+  "nav": {
+    "home": "Accueil",
+    "features": "Fonctionnalités",
+    "dashboard": "Tableau de bord",
+    "pricing": "Tarifs",
+    "contact": "Contact",
+    "tools": "Outils",
+    "analytics": "Analytique",
+    "edgeSync": "Synchronisation Edge",
+    "subsidies": "Subventions",
+    "admin": "Admin",
+    "regional": "Régional",
+    "login": "Connexion",
+    "signup": "S'inscrire",
+    "logout": "Déconnexion",
+    "futuristic": "IA & Futur"
+  },
+  "auth": {
+    "login": { "title": "Bon retour", "submit": "Se connecter" },
+    "signup": { "title": "Créez votre compte", "submit": "Créer un compte" },
+    "passwordReset": { "title": "Réinitialiser le mot de passe", "submit": "Envoyer le lien" }
+  },
+  "dashboard": {
+    "welcome": "Bon retour",
+    "liveFeed": "Flux en direct"
+  },
+  "footer": {
+    "tagline": "L'agriculture de précision pour tous",
+    "quickLinks": "Liens rapides",
+    "contact": "Contact",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "rights": "Tous droits réservés",
+    "futuristicFeatures": "Fonctionnalités Futuristes"
+  },
+  "analytics": {
+    "cropComparison": { "title": "Analyse de Comparaison des Cultures" },
+    "marketPrices": { "title": "Intégration des Prix du Marché" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "Tableau de Bord Jumeau Numérique" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "Assistant Vocal IA" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "Demande de Subvention" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "Portail des Subventions" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "Conseiller de Culture IA", "subtitle": "Recommandations personnalisées propulsées par l'IA." },
+    "droneMonitoring": { "title": "Système de Surveillance par Drone", "subtitle": "Surveillance aérienne autonome et cartographie en temps réel." },
+    "iotSensors": { "title": "Matrice de Capteurs IoT", "subtitle": "Télémétrie en temps réel des capteurs de terrain." },
+    "predictiveWeather": { "title": "Météo Prédictive IA", "subtitle": "Prévisions avancées à 30 jours par réseaux de neurones." },
+    "diseaseDetector": { "title": "Détecteur de Maladies IA", "subtitle": "Téléchargez des images de feuilles pour une analyse instantanée." },
+    "smartIrrigation": { "title": "Système d'Irrigation Intelligent", "subtitle": "Gestion automatisée de l'eau basée sur la télémétrie." },
+    "blockchainCert": { "title": "Certification Blockchain", "subtitle": "Traçabilité immuable de la ferme au marché." },
+    "pestManagement": { "title": "Gestion des Parasites IA", "subtitle": "Modélisation prédictive et stratégies d'éradication." },
+    "satelliteImagery": { "title": "Analyse d'Imagerie Satellitaire", "subtitle": "Cartographie NDVI multispectrale et santé des cultures." },
+    "climateRisk": { "title": "Évaluation des Risques Climatiques", "subtitle": "Projections IA à long terme pour les conditions extrêmes." },
+    "precisionFarming": { "title": "Tableau de Bord d'Agriculture de Précision", "subtitle": "Application à taux variable et métriques de micro-gestion." },
+    "yieldForecasting": { "title": "Prévision de Rendement IA", "subtitle": "Modélisation prédictive multivariable pour les récoltes." },
+    "soilMicrobiome": { "title": "Analyse du Microbiome du Sol", "subtitle": "Diversité microbienne et détection des agents pathogènes." },
+    "carbonFootprint": { "title": "Suivi de l'Empreinte Carbone", "subtitle": "Surveillez les émissions et calculez les crédits carbone." },
+    "communityHub": { "title": "Réseau Mondial des Agriculteurs", "subtitle": "Connectez-vous et apprenez des experts en agriculture." }
+  }
+}

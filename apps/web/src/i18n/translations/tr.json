@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "Yükleniyor...",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "export": "Dışa Aktar",
+    "filter": "Filtrele",
+    "search": "Ara...",
+    "status": "Durum",
+    "action": "İşlem",
+    "date": "Tarih",
+    "success": "Başarılı",
+    "error": "Hata",
+    "back": "Geri"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "features": "Özellikler",
+    "dashboard": "Panel",
+    "pricing": "Fiyatlandırma",
+    "contact": "İletişim",
+    "tools": "Araçlar",
+    "analytics": "Analitik",
+    "edgeSync": "Edge Senkronizasyonu",
+    "subsidies": "Sübvansiyonlar",
+    "admin": "Yönetici",
+    "regional": "Bölgesel",
+    "login": "Giriş Yap",
+    "signup": "Kayıt Ol",
+    "logout": "Çıkış Yap",
+    "futuristic": "Yapay Zeka ve Gelecek"
+  },
+  "auth": {
+    "login": { "title": "Tekrar Hoş Geldiniz", "submit": "Giriş Yap" },
+    "signup": { "title": "Hesabınızı Oluşturun", "submit": "Hesap Oluştur" },
+    "passwordReset": { "title": "Şifrenizi Sıfırlayın", "submit": "Bağlantı Gönder" }
+  },
+  "dashboard": {
+    "welcome": "Tekrar Hoş Geldiniz",
+    "liveFeed": "Canlı Akış"
+  },
+  "footer": {
+    "tagline": "Herkes için hassas tarım",
+    "quickLinks": "Hızlı Bağlantılar",
+    "contact": "İletişim",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Hizmet Şartları",
+    "rights": "Tüm hakları saklıdır",
+    "futuristicFeatures": "Fütüristik Özellikler"
+  },
+  "analytics": {
+    "cropComparison": { "title": "Mahsul Karşılaştırma Analizi" },
+    "marketPrices": { "title": "Piyasa Fiyatları Entegrasyonu" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "Dijital İkiz Paneli" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "Yapay Zeka Sesli Asistan" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "Sübvansiyon Başvurusu" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "Sübvansiyon Portalı" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "Yapay Zeka Mahsul Danışmanı", "subtitle": "Kuantum destekli kişiselleştirilmiş mahsul önerileri." },
+    "droneMonitoring": { "title": "Drone İzleme Sistemi", "subtitle": "Otonom hava gözetimi ve gerçek zamanlı haritalama." },
+    "iotSensors": { "title": "IoT Sensör Matrisi", "subtitle": "Dağıtılmış alan sensörlerinden gerçek zamanlı telemetri." },
+    "predictiveWeather": { "title": "Tahmine Dayalı Hava Durumu YZ", "subtitle": "Sinir ağları tarafından desteklenen gelişmiş 30 günlük tahmin." },
+    "diseaseDetector": { "title": "Mahsul Hastalığı YZ Dedektörü", "subtitle": "Anında analiz için yaprak görüntülerini yükleyin." },
+    "smartIrrigation": { "title": "Akıllı Sulama Sistemi", "subtitle": "Toprak telemetrisi ile desteklenen otomatik su yönetimi." },
+    "blockchainCert": { "title": "Blockchain Mahsul Sertifikasyonu", "subtitle": "Çiftlikten pazara değişmez izlenebilirlik." },
+    "pestManagement": { "title": "Yapay Zeka Zararlı Yönetimi", "subtitle": "Tahmine dayalı zararlı modellemesi ve hedeflenen yok etme stratejileri." },
+    "satelliteImagery": { "title": "Uydu Görüntüsü Analizi", "subtitle": "Çok spektrumlu NDVI haritalama ve mahsul sağlığı görselleştirmesi." },
+    "climateRisk": { "title": "İklim Riski Değerlendirmesi", "subtitle": "Aşırı hava koşulları için uzun vadeli YZ projeksiyonları." },
+    "precisionFarming": { "title": "Hassas Tarım Paneli", "subtitle": "Değişken oranlı uygulama ve mikro yönetim metrikleri." },
+    "yieldForecasting": { "title": "Yapay Zeka Verim Tahmini", "subtitle": "Hasat sonuçları için çok değişkenli tahmine dayalı modelleme." },
+    "soilMicrobiome": { "title": "Toprak Mikrobiyom Analizi", "subtitle": "Derin düzeyde mikrobiyal çeşitlilik ve patojen tespiti." },
+    "carbonFootprint": { "title": "Karbon Ayak İzi İzleyici", "subtitle": "Emisyonları izleyin ve karbon denkleştirme kredilerini hesaplayın." },
+    "communityHub": { "title": "Küresel Çiftçi Ağı", "subtitle": "Bağlanın, içgörüleri paylaşın ve uzmanlardan öğrenin." }
+  }
+}

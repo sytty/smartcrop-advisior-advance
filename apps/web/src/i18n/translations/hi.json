@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "export": "निर्यात",
+    "filter": "फ़िल्टर",
+    "search": "खोजें...",
+    "status": "स्थिति",
+    "action": "कार्रवाई",
+    "date": "तारीख",
+    "success": "सफलता",
+    "error": "त्रुटि",
+    "back": "वापस"
+  },
+  "nav": {
+    "home": "होम",
+    "features": "विशेषताएं",
+    "dashboard": "डैशबोर्ड",
+    "pricing": "मूल्य निर्धारण",
+    "contact": "संपर्क करें",
+    "tools": "उपकरण",
+    "analytics": "एनालिटिक्स",
+    "edgeSync": "एज सिंक",
+    "subsidies": "सब्सिडी",
+    "admin": "व्यवस्थापक",
+    "regional": "क्षेत्रीय",
+    "login": "लॉग इन",
+    "signup": "साइन अप",
+    "logout": "लॉग आउट",
+    "futuristic": "AI और भविष्य"
+  },
+  "auth": {
+    "login": { "title": "वापसी पर स्वागत है", "submit": "साइन इन करें" },
+    "signup": { "title": "अपना खाता बनाएँ", "submit": "खाता बनाएँ" },
+    "passwordReset": { "title": "अपना पासवर्ड रीसेट करें", "submit": "लिंक भेजें" }
+  },
+  "dashboard": {
+    "welcome": "वापसी पर स्वागत है",
+    "liveFeed": "लाइव फील्ड फीड"
+  },
+  "footer": {
+    "tagline": "सभी के लिए सटीक कृषि",
+    "quickLinks": "त्वरित लिंक",
+    "contact": "संपर्क करें",
+    "privacy": "गोपनीयता नीति",
+    "terms": "सेवा की शर्तें",
+    "rights": "सर्वाधिकार सुरक्षित",
+    "futuristicFeatures": "भविष्य की विशेषताएं"
+  },
+  "analytics": {
+    "cropComparison": { "title": "फसल तुलना एनालिटिक्स" },
+    "marketPrices": { "title": "बाजार मूल्य एकीकरण" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "डिजिटल ट्विन डैशबोर्ड" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "AI वॉयस असिस्टेंट" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "सब्सिडी आवेदन" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "सब्सिडी पोर्टल" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "AI फसल सलाहकार", "subtitle": "क्वांटम-संचालित व्यक्तिगत फसल सिफारिशें।" },
+    "droneMonitoring": { "title": "ड्रोन निगरानी प्रणाली", "subtitle": "स्वायत्त हवाई निगरानी और वास्तविक समय मानचित्रण।" },
+    "iotSensors": { "title": "IoT सेंसर मैट्रिक्स", "subtitle": "वितरित क्षेत्र सेंसर से वास्तविक समय टेलीमेट्री।" },
+    "predictiveWeather": { "title": "भविष्य कहनेवाला मौसम AI", "subtitle": "तंत्रिका नेटवर्क द्वारा संचालित उन्नत 30-दिवसीय पूर्वानुमान।" },
+    "diseaseDetector": { "title": "फसल रोग AI डिटेक्टर", "subtitle": "त्वरित तंत्रिका नेटवर्क विश्लेषण के लिए पत्ती इमेजरी अपलोड करें।" },
+    "smartIrrigation": { "title": "स्मार्ट सिंचाई प्रणाली", "subtitle": "मिट्टी टेलीमेट्री द्वारा संचालित स्वचालित जल प्रबंधन।" },
+    "blockchainCert": { "title": "ब्लॉकचेन फसल प्रमाणन", "subtitle": "खेत से बाजार तक अपरिवर्तनीय पता लगाने की क्षमता।" },
+    "pestManagement": { "title": "AI कीट प्रबंधन", "subtitle": "भविष्य कहनेवाला कीट मॉडलिंग और लक्षित उन्मूलन रणनीतियाँ।" },
+    "satelliteImagery": { "title": "उपग्रह इमेजरी विश्लेषण", "subtitle": "मल्टीस्पेक्ट्रल NDVI मैपिंग और फसल स्वास्थ्य दृश्य।" },
+    "climateRisk": { "title": "जलवायु जोखिम मूल्यांकन", "subtitle": "चरम मौसम और जलवायु बदलाव के लिए दीर्घकालिक AI अनुमान।" },
+    "precisionFarming": { "title": "सटीक खेती डैशबोर्ड", "subtitle": "परिवर्तनीय दर आवेदन और सूक्ष्म प्रबंधन मेट्रिक्स।" },
+    "yieldForecasting": { "title": "AI उपज पूर्वानुमान", "subtitle": "फसल परिणामों के लिए बहु-चर भविष्य कहनेवाला मॉडलिंग।" },
+    "soilMicrobiome": { "title": "मृदा माइक्रोबायोम विश्लेषण", "subtitle": "गहरे स्तर की माइक्रोबियल विविधता और रोगज़नक़ का पता लगाना।" },
+    "carbonFootprint": { "title": "कार्बन फुटप्रिंट ट्रैकर", "subtitle": "उत्सर्जन की निगरानी करें और कार्बन ऑफसेट क्रेडिट की गणना करें।" },
+    "communityHub": { "title": "वैश्विक किसान नेटवर्क", "subtitle": "जुड़ें, अंतर्दृष्टि साझा करें, और विशेषज्ञों से सीखें।" }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "Laden...",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "export": "Exportieren",
+    "filter": "Filtern",
+    "search": "Suchen...",
+    "status": "Status",
+    "action": "Aktion",
+    "date": "Datum",
+    "success": "Erfolg",
+    "error": "Fehler",
+    "back": "Zurück"
+  },
+  "nav": {
+    "home": "Startseite",
+    "features": "Funktionen",
+    "dashboard": "Dashboard",
+    "pricing": "Preise",
+    "contact": "Kontakt",
+    "tools": "Werkzeuge",
+    "analytics": "Analytik",
+    "edgeSync": "Edge-Synchronisierung",
+    "subsidies": "Subventionen",
+    "admin": "Admin",
+    "regional": "Regional",
+    "login": "Anmelden",
+    "signup": "Registrieren",
+    "logout": "Abmelden",
+    "futuristic": "KI & Zukunft"
+  },
+  "auth": {
+    "login": { "title": "Willkommen zurück", "submit": "Anmelden" },
+    "signup": { "title": "Konto erstellen", "submit": "Konto erstellen" },
+    "passwordReset": { "title": "Passwort zurücksetzen", "submit": "Link senden" }
+  },
+  "dashboard": {
+    "welcome": "Willkommen zurück",
+    "liveFeed": "Live-Feed"
+  },
+  "footer": {
+    "tagline": "Präzisionslandwirtschaft für alle",
+    "quickLinks": "Schnelllinks",
+    "contact": "Kontakt",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "rights": "Alle Rechte vorbehalten",
+    "futuristicFeatures": "Futuristische Funktionen"
+  },
+  "analytics": {
+    "cropComparison": { "title": "Erntevergleichsanalyse" },
+    "marketPrices": { "title": "Marktpreisintegration" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "Digitaler Zwilling Dashboard" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "KI-Sprachassistent" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "Subventionsantrag" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "Subventionsportal" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "KI-Ernteberater", "subtitle": "Quantengestützte personalisierte Ernteempfehlungen." },
+    "droneMonitoring": { "title": "Drohnenüberwachungssystem", "subtitle": "Autonome Luftüberwachung und Echtzeit-Kartierung." },
+    "iotSensors": { "title": "IoT-Sensormatrix", "subtitle": "Echtzeit-Telemetrie von verteilten Feldsensoren." },
+    "predictiveWeather": { "title": "Prädiktives Wetter-KI", "subtitle": "Erweiterte 30-Tage-Vorhersage durch neuronale Netze." },
+    "diseaseDetector": { "title": "KI-Krankheitsdetektor", "subtitle": "Laden Sie Blattbilder für eine sofortige Analyse hoch." },
+    "smartIrrigation": { "title": "Intelligentes Bewässerungssystem", "subtitle": "Automatisiertes Wassermanagement durch Bodentelemetrie." },
+    "blockchainCert": { "title": "Blockchain-Zertifizierung", "subtitle": "Unveränderliche Rückverfolgbarkeit vom Hof zum Markt." },
+    "pestManagement": { "title": "KI-Schädlingsbekämpfung", "subtitle": "Prädiktive Schädlingsmodellierung und Ausrottungsstrategien." },
+    "satelliteImagery": { "title": "Satellitenbildanalyse", "subtitle": "Multispektrale NDVI-Kartierung und Gesundheitsvisualisierung." },
+    "climateRisk": { "title": "Klimarisikobewertung", "subtitle": "Langfristige KI-Projektionen für extremes Wetter." },
+    "precisionFarming": { "title": "Präzisionslandwirtschaft-Dashboard", "subtitle": "Variable Ausbringmengen und Mikromanagement-Metriken." },
+    "yieldForecasting": { "title": "KI-Ertragsprognose", "subtitle": "Multivariable prädiktive Modellierung für Ernteergebnisse." },
+    "soilMicrobiome": { "title": "Bodenmikrobiom-Analyse", "subtitle": "Mikrobielle Vielfalt und Pathogenerkennung." },
+    "carbonFootprint": { "title": "CO2-Fußabdruck-Tracker", "subtitle": "Emissionen überwachen und CO2-Zertifikate berechnen." },
+    "communityHub": { "title": "Globales Bauernnetzwerk", "subtitle": "Vernetzen Sie sich und lernen Sie von Experten." }
+  }
+}

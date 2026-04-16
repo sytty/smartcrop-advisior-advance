@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "save": "保存",
+    "cancel": "取消",
+    "export": "导出",
+    "filter": "筛选",
+    "search": "搜索...",
+    "status": "状态",
+    "action": "操作",
+    "date": "日期",
+    "success": "成功",
+    "error": "错误",
+    "back": "返回"
+  },
+  "nav": {
+    "home": "首页",
+    "features": "功能",
+    "dashboard": "仪表板",
+    "pricing": "定价",
+    "contact": "联系我们",
+    "tools": "工具",
+    "analytics": "分析",
+    "edgeSync": "边缘同步",
+    "subsidies": "补贴",
+    "admin": "管理员",
+    "regional": "区域",
+    "login": "登录",
+    "signup": "注册",
+    "logout": "登出",
+    "futuristic": "AI与未来"
+  },
+  "auth": {
+    "login": { "title": "欢迎回来", "submit": "登录" },
+    "signup": { "title": "创建您的账户", "submit": "创建账户" },
+    "passwordReset": { "title": "重置密码", "submit": "发送链接" }
+  },
+  "dashboard": {
+    "welcome": "欢迎回来",
+    "liveFeed": "实时动态"
+  },
+  "footer": {
+    "tagline": "面向所有人的精准农业",
+    "quickLinks": "快速链接",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "rights": "版权所有",
+    "futuristicFeatures": "未来功能"
+  },
+  "analytics": {
+    "cropComparison": { "title": "作物比较分析" },
+    "marketPrices": { "title": "市场价格整合" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "数字孪生仪表板" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "AI语音助手" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "补贴申请" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "补贴门户" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "AI作物顾问", "subtitle": "量子驱动的个性化作物推荐。" },
+    "droneMonitoring": { "title": "无人机监控系统", "subtitle": "自主空中监视和实时测绘。" },
+    "iotSensors": { "title": "物联网传感器矩阵", "subtitle": "分布式现场传感器的实时遥测。" },
+    "predictiveWeather": { "title": "预测性天气AI", "subtitle": "由神经网络驱动的高级30天预测。" },
+    "diseaseDetector": { "title": "作物疾病AI检测器", "subtitle": "上传叶片图像进行即时分析。" },
+    "smartIrrigation": { "title": "智能灌溉系统", "subtitle": "由土壤遥测驱动的自动化水管理。" },
+    "blockchainCert": { "title": "区块链作物认证", "subtitle": "从农场到市场的不可变可追溯性。" },
+    "pestManagement": { "title": "AI害虫管理", "subtitle": "预测性害虫建模和针对性根除策略。" },
+    "satelliteImagery": { "title": "卫星图像分析", "subtitle": "多光谱NDVI测绘和作物健康可视化。" },
+    "climateRisk": { "title": "气候风险评估", "subtitle": "针对极端天气的长期AI预测。" },
+    "precisionFarming": { "title": "精准农业仪表板", "subtitle": "可变速率应用和微观管理指标。" },
+    "yieldForecasting": { "title": "AI产量预测", "subtitle": "收获结果的多变量预测建模。" },
+    "soilMicrobiome": { "title": "土壤微生物组分析", "subtitle": "深层微生物多样性和病原体检测。" },
+    "carbonFootprint": { "title": "碳足迹追踪器", "subtitle": "监控排放并计算碳抵消信用额。" },
+    "communityHub": { "title": "全球农民网络", "subtitle": "连接、分享见解并向专家学习。" }
+  }
+}

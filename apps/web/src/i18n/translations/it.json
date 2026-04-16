@@ -1,0 +1,84 @@
+{
+  "common": {
+    "loading": "Caricamento...",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "export": "Esporta",
+    "filter": "Filtra",
+    "search": "Cerca...",
+    "status": "Stato",
+    "action": "Azione",
+    "date": "Data",
+    "success": "Successo",
+    "error": "Errore",
+    "back": "Indietro"
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Funzionalità",
+    "dashboard": "Dashboard",
+    "pricing": "Prezzi",
+    "contact": "Contatti",
+    "tools": "Strumenti",
+    "analytics": "Analitica",
+    "edgeSync": "Sincronizzazione Edge",
+    "subsidies": "Sussidi",
+    "admin": "Admin",
+    "regional": "Regionale",
+    "login": "Accedi",
+    "signup": "Iscriviti",
+    "logout": "Esci",
+    "futuristic": "IA & Futuro"
+  },
+  "auth": {
+    "login": { "title": "Bentornato", "submit": "Accedi" },
+    "signup": { "title": "Crea il tuo account", "submit": "Crea account" },
+    "passwordReset": { "title": "Reimposta la password", "submit": "Invia link" }
+  },
+  "dashboard": {
+    "welcome": "Bentornato",
+    "liveFeed": "Feed in diretta"
+  },
+  "footer": {
+    "tagline": "Agricoltura di precisione per tutti",
+    "quickLinks": "Link rapidi",
+    "contact": "Contatti",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Termini di servizio",
+    "rights": "Tutti i diritti riservati",
+    "futuristicFeatures": "Funzionalità Futuristica"
+  },
+  "analytics": {
+    "cropComparison": { "title": "Analisi Comparativa delle Colture" },
+    "marketPrices": { "title": "Integrazione dei Prezzi di Mercato" }
+  },
+  "monitoring": {
+    "digital_twin": { "title": "Dashboard Gemello Digitale" }
+  },
+  "intelligence": {
+    "voice_assistant": { "title": "Assistente Vocale IA" }
+  },
+  "admin": {
+    "subsidyVerification": { "title": "Domanda di Sussidio" }
+  },
+  "enterprise": {
+    "subsidyPortal": { "title": "Portale dei Sussidi" }
+  },
+  "futuristic": {
+    "aiCropAdvisor": { "title": "Consulente Colture IA", "subtitle": "Raccomandazioni personalizzate basate sull'IA." },
+    "droneMonitoring": { "title": "Sistema di Monitoraggio Droni", "subtitle": "Sorveglianza aerea autonoma e mappatura in tempo reale." },
+    "iotSensors": { "title": "Matrice Sensori IoT", "subtitle": "Telemetria in tempo reale da sensori distribuiti." },
+    "predictiveWeather": { "title": "Meteo Predittivo IA", "subtitle": "Previsioni avanzate a 30 giorni tramite reti neurali." },
+    "diseaseDetector": { "title": "Rilevatore Malattie IA", "subtitle": "Carica immagini di foglie per un'analisi istantanea." },
+    "smartIrrigation": { "title": "Sistema di Irrigazione Intelligente", "subtitle": "Gestione automatizzata dell'acqua basata sulla telemetria." },
+    "blockchainCert": { "title": "Certificazione Blockchain", "subtitle": "Tracciabilità immutabile dalla fattoria al mercato." },
+    "pestManagement": { "title": "Gestione Parassiti IA", "subtitle": "Modellazione predittiva e strategie di eradicazione." },
+    "satelliteImagery": { "title": "Analisi Immagini Satellitari", "subtitle": "Mappatura multispettrale NDVI e salute delle colture." },
+    "climateRisk": { "title": "Valutazione Rischio Climatico", "subtitle": "Proiezioni IA a lungo termine per condizioni estreme." },
+    "precisionFarming": { "title": "Dashboard Agricoltura di Precisione", "subtitle": "Applicazione a rateo variabile e metriche di micro-gestione." },
+    "yieldForecasting": { "title": "Previsione Resa IA", "subtitle": "Modellazione predittiva multivariabile per i raccolti." },
+    "soilMicrobiome": { "title": "Analisi Microbioma del Suolo", "subtitle": "Diversità microbica e rilevamento di agenti patogeni." },
+    "carbonFootprint": { "title": "Tracciatore Impronta di Carbonio", "subtitle": "Monitora le emissioni e calcola i crediti di carbonio." },
+    "communityHub": { "title": "Rete Globale degli Agricoltori", "subtitle": "Connettiti e impara dagli esperti di agricoltura." }
+  }
+}
