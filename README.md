@@ -1,14 +1,12 @@
-# AI-Powered Smart Agriculture Platform
+# smartcrop-advisior-advance
 
 AI-powered smart agriculture platform that unifies farm operations, predictive intelligence, and real-time monitoring into one production-ready system.
 
-New to this repository?
-
-Start with the full setup manual: [BUILD_AND_RUN_FROM_SCRATCH.md](BUILD_AND_RUN_FROM_SCRATCH.md)
+New to this repository? Start with the full setup manual: [BUILD_AND_RUN_FROM_SCRATCH.md](BUILD_AND_RUN_FROM_SCRATCH.md)
 
 ## Why This Project
 
-Hostinger Horizons helps farmers, agribusiness teams, and administrators make faster, data-driven decisions by combining:
+This platform helps farmers, agribusiness teams, and administrators make faster, data-driven decisions by combining:
 
 - AI-assisted crop and disease intelligence
 - Weather, soil, water, and yield analytics
@@ -71,6 +69,7 @@ Hostinger Horizons helps farmers, agribusiness teams, and administrators make fa
 Create a root .env file with values for your local setup:
 
     # PocketBase
+    # Generate with: openssl rand -base64 32
     PB_ENCRYPTION_KEY=replace-with-a-strong-random-key
     POCKETBASE_URL=http://127.0.0.1:8090
 

@@ -19,6 +19,7 @@ Create a root `.env` file:
 
 ```env
 # PocketBase
+# Generate with: openssl rand -base64 32
 PB_ENCRYPTION_KEY=replace-with-a-strong-random-key
 POCKETBASE_URL=http://127.0.0.1:8090
 
