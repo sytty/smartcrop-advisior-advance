@@ -1,4 +1,4 @@
-# Hostinger Horizons
+
 
 AI-powered smart agriculture platform that unifies farm operations, predictive intelligence, and real-time monitoring into one production-ready system.
 
@@ -8,7 +8,7 @@ Start with the full setup manual: [BUILD_AND_RUN_FROM_SCRATCH.md](BUILD_AND_RUN_
 
 ## Why This Project
 
-Hostinger Horizons helps farmers, agribusiness teams, and administrators make faster, data-driven decisions by combining:
+we helps farmers, agribusiness teams, and administrators make faster, data-driven decisions by combining:
 
 - AI-assisted crop and disease intelligence
 - Weather, soil, water, and yield analytics
