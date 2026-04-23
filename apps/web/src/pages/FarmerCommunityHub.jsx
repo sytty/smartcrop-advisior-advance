@@ -21,7 +21,7 @@ const FarmerCommunityHub = () => {
   const suggestions = [{ id: 1, text: 'Join the "Drought Resistant Farming" group. 45 farmers in your area are sharing tips there.', impact: 'Learn local best practices' }];
 
   return (
-    <div className="min-h-screen bg-[#050505] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet><title>Farmer Community - Smart Crop Advisor</title></Helmet>
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">

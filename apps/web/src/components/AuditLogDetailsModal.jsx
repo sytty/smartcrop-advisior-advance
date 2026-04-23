@@ -50,7 +50,7 @@ const AuditLogDetailsModal = ({ transaction, isOpen, onClose }) => {
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto glass-card rounded-2xl border border-white/10 shadow-2xl flex flex-col"
         >
-          <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur-md">
+          <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-white/10 bg-[hsl(var(--brand-night))]/80 backdrop-blur-md">
             <div className="flex items-center gap-3">
               <div className={`p-2 rounded-lg ${transaction.verified ? 'bg-[#1a4d2e]/30 text-[#22c55e]' : 'bg-red-500/20 text-red-400'}`}>
                 {transaction.verified ? <ShieldCheck className="w-6 h-6" /> : <ShieldAlert className="w-6 h-6" />}

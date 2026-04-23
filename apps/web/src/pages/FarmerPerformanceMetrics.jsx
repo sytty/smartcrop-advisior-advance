@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import { Award, Download, Users, Loader2, ShieldAlert } from 'lucide-react';
-import { generateFarmerPerformanceData } from '@/lib/mockData.js';
 import { Button } from '@/components/ui/button';
 import ErrorBoundary from '@/components/ErrorBoundary.jsx';
 import GlassCard from '@/components/GlassCard.jsx';
@@ -11,6 +10,7 @@ import { useAuth } from '@/contexts/AuthContext.jsx';
 import { Navigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { useTranslation } from 'react-i18next';
+import farmManagementApi from '@/lib/farmManagementApi.js';
 
 const DashboardSkeleton = () => (
   <div className="animate-pulse space-y-8 w-full">
@@ -28,19 +28,44 @@ const FarmerPerformanceMetricsContent = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [summary, setSummary] = useState({
+    score: 86,
+    rank: 'Top 15%',
+    strongest: 'Disease Control',
+    metrics: {
+      fields: 0,
+      crops: 0,
+      cropDiversity: 0,
+      averageFieldHealth: 0,
+      averageYield: 0,
+      averageProfitability: 0,
+      averageWaterUsage: 0,
+      averageDiseaseRisk: 0,
+      averagePestRisk: 0,
+      recentFieldUpdates: 0,
+    },
+  });
 
   useEffect(() => {
     let mounted = true;
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        await new Promise(resolve => setTimeout(resolve, 600));
         if (!mounted) return;
-        
-        const mockData = generateFarmerPerformanceData();
-        if (!mockData || mockData.length === 0) throw new Error("Failed to load performance data");
-        
-        setData(mockData);
+        const performance = await farmManagementApi.getPerformance({
+          farmerId: currentUser.id,
+          scope: 'all',
+        });
+
+        if (!performance?.radar || performance.radar.length === 0) throw new Error('Failed to load performance data');
+
+        setData(performance.radar);
+        setSummary({
+          score: performance.score,
+          rank: performance.rank,
+          strongest: performance.strongest,
+          metrics: performance.metrics,
+        });
       } catch (err) {
         console.error("FarmerPerformance Error:", err);
         if (mounted) setError(err.message);
@@ -88,7 +113,7 @@ const FarmerPerformanceMetricsContent = () => {
                 <Award className="w-4 h-4 text-purple-400" />
               </div>
             </div>
-            <p className="text-4xl font-bold text-white">86<span className="text-lg text-gray-400 font-normal">/100</span></p>
+            <p className="text-4xl font-bold text-white">{summary.score}<span className="text-lg text-gray-400 font-normal">/100</span></p>
           </GlassCard>
         </motion.div>
 
@@ -100,7 +125,7 @@ const FarmerPerformanceMetricsContent = () => {
                 <Users className="w-4 h-4 text-[#00d4ff]" />
               </div>
             </div>
-            <p className="text-3xl font-bold text-[#00d4ff]">Top 15%</p>
+            <p className="text-3xl font-bold text-[#00d4ff]">{summary.rank}</p>
           </GlassCard>
         </motion.div>
 
@@ -112,9 +137,25 @@ const FarmerPerformanceMetricsContent = () => {
                 <ShieldAlert className="w-4 h-4 text-green-400" />
               </div>
             </div>
-            <p className="text-2xl font-bold text-green-400">Disease Control</p>
+            <p className="text-2xl font-bold text-green-400">{summary.strongest}</p>
           </GlassCard>
         </motion.div>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 mb-8">
+        {[
+          { label: 'Fields', value: summary.metrics.fields },
+          { label: 'Crops', value: summary.metrics.crops },
+          { label: 'Crop Diversity', value: summary.metrics.cropDiversity },
+          { label: 'Avg Field Health', value: `${summary.metrics.averageFieldHealth}%` },
+          { label: 'Avg Profitability', value: `${summary.metrics.averageProfitability}%` },
+          { label: 'Recent Updates', value: summary.metrics.recentFieldUpdates },
+        ].map((item) => (
+          <GlassCard key={item.label} className="p-4 rounded-2xl">
+            <p className="text-xs uppercase tracking-[0.12em] text-gray-400 mb-1">{item.label}</p>
+            <p className="text-xl font-bold text-white">{item.value}</p>
+          </GlassCard>
+        ))}
       </div>
 
       <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4 }}>
@@ -145,7 +186,7 @@ const FarmerPerformanceMetricsContent = () => {
 const FarmerPerformanceMetrics = () => {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet><title>{t('analytics.performance.title')} - Smart Crop Advisor</title></Helmet>
       <ErrorBoundary componentName="FarmerPerformanceMetrics">
         <FarmerPerformanceMetricsContent />

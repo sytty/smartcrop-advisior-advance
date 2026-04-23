@@ -27,6 +27,7 @@ async function runFeatureTests() {
 
   const pagesDir = path.join(process.cwd(), 'apps/web/src/pages');
   const componentsDir = path.join(process.cwd(), 'apps/web/src/components');
+  const contextsDir = path.join(process.cwd(), 'apps/web/src/contexts');
 
   // Test 1: Critical Pages
   console.log('📄 TEST 1: Critical Pages Availability\n');
@@ -71,10 +72,14 @@ async function runFeatureTests() {
   const coreComponents = [
     'Header.jsx',
     'Footer.jsx',
-    'AuthContext.jsx',
     'ProtectedRoute.jsx',
     'ErrorBoundary.jsx'
   ];
+
+  // AuthContext lives in contexts/, not components/ — check separately
+  const authContextExists = fileExists(path.join(contextsDir, 'AuthContext.jsx'));
+  console.log(`${authContextExists ? '✅' : '❌'} AuthContext.jsx (contexts/)`);
+  if (!authContextExists) componentStatus = false;
 
   let componentStatus = true;
   for (const comp of coreComponents) {
@@ -100,7 +105,7 @@ async function runFeatureTests() {
 
   // Test 5: Authentication Context
   console.log('🔐 TEST 5: Authentication Features\n');
-  const authContext = readFile(path.join(componentsDir, 'AuthContext.jsx'));
+  const authContext = readFile(path.join(contextsDir, 'AuthContext.jsx'));
   if (authContext) {
     const hasLogin = authContext.includes('login');
     const hasSignup = authContext.includes('signup');

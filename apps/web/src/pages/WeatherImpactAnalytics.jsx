@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { AreaChart, Area, BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { CloudRain, Download, Thermometer, Wind, AlertTriangle } from 'lucide-react';
-import { generateWeatherData } from '@/lib/mockData.js';
+import mlModelService from '@/lib/mlModelService.js';
 import { Button } from '@/components/ui/button';
 import ErrorBoundary from '@/components/ErrorBoundary.jsx';
 import GlassCard from '@/components/GlassCard.jsx';
@@ -31,13 +31,11 @@ const WeatherImpactAnalyticsContent = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        await new Promise(resolve => setTimeout(resolve, 600));
+        const inference = await mlModelService.infer('weather_impact_analytics');
         if (!mounted) return;
-        
-        const mockData = generateWeatherData();
-        if (!mockData || mockData.length === 0) throw new Error("Failed to load weather data");
-        
-        setData(mockData);
+        if (!inference.rows || inference.rows.length === 0) throw new Error('Failed to load weather data');
+
+        setData(inference.rows);
       } catch (err) {
         console.error("WeatherImpact Error:", err);
         if (mounted) setError(err.message);
@@ -182,7 +180,7 @@ const WeatherImpactAnalyticsContent = () => {
 const WeatherImpactAnalytics = () => {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet><title>{t('analytics.weather.title')} - Smart Crop Advisor</title></Helmet>
       <ErrorBoundary componentName="WeatherImpactAnalytics">
         <WeatherImpactAnalyticsContent />

@@ -17,13 +17,15 @@ const Footer = () => {
                 <Leaf className="w-5 h-5 text-white" />
               </div>
               <div className="leading-tight">
-                <span className="block text-lg font-extrabold text-foreground tracking-tight">Smart Crop Advisor</span>
-                <span className="block text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Intelligence Platform</span>
+                <span className="block text-lg font-extrabold text-foreground tracking-tight">{t('footer.brand', { defaultValue: 'Smart Crop Advisor' })}</span>
+                <span className="block text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{t('footer.brandTagline', { defaultValue: 'Intelligence Platform' })}</span>
               </div>
             </Link>
 
             <p className="text-muted-foreground text-sm mb-6 max-w-sm leading-relaxed">
-              Built for field teams, farm operators, and agri-enterprises that want reliable AI-driven decisions from sowing to harvest.
+              {t('footer.description', {
+                defaultValue: 'Built for field teams, farm operators, and agri-enterprises that want reliable AI-driven decisions from sowing to harvest.',
+              })}
             </p>
 
             <div className="flex gap-4 mb-8">
@@ -39,7 +41,7 @@ const Footer = () => {
             </div>
 
             <Link to="/signup" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80">
-              Start your free trial <ArrowRight className="w-4 h-4" />
+              {t('footer.startTrial', { defaultValue: 'Start your free trial' })} <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -49,25 +51,25 @@ const Footer = () => {
               <li><Link to="/" className="text-muted-foreground hover:text-foreground text-sm transition-colors">{t('nav.home')}</Link></li>
               <li><Link to="/pricing" className="text-muted-foreground hover:text-foreground text-sm transition-colors">{t('nav.pricing')}</Link></li>
               <li><Link to="/contact" className="text-muted-foreground hover:text-foreground text-sm transition-colors">{t('nav.contact')}</Link></li>
-              <li><Link to="/docs" className="text-muted-foreground hover:text-foreground text-sm transition-colors">Documentation</Link></li>
+              <li><Link to="/docs" className="text-muted-foreground hover:text-foreground text-sm transition-colors">{t('footer.documentation', { defaultValue: 'Documentation' })}</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-foreground font-semibold mb-4">{t('footer.futuristicFeatures')}</h3>
             <ul className="space-y-3">
-              <li><Link to="/ai-crop-advisor" className="text-muted-foreground hover:text-primary text-sm transition-colors">AI Crop Advisor</Link></li>
-              <li><Link to="/drone-monitoring" className="text-muted-foreground hover:text-primary text-sm transition-colors">Drone Monitoring</Link></li>
-              <li><Link to="/iot-sensors" className="text-muted-foreground hover:text-primary text-sm transition-colors">IoT Sensors</Link></li>
-              <li><Link to="/predictive-weather" className="text-muted-foreground hover:text-primary text-sm transition-colors">Predictive Weather</Link></li>
+              <li><Link to="/ai-crop-advisor" className="text-muted-foreground hover:text-primary text-sm transition-colors">{t('footer.aiCropAdvisor', { defaultValue: 'AI Crop Advisor' })}</Link></li>
+              <li><Link to="/drone-monitoring" className="text-muted-foreground hover:text-primary text-sm transition-colors">{t('footer.droneMonitoring', { defaultValue: 'Drone Monitoring' })}</Link></li>
+              <li><Link to="/iot-sensors" className="text-muted-foreground hover:text-primary text-sm transition-colors">{t('footer.iotSensors', { defaultValue: 'IoT Sensors' })}</Link></li>
+              <li><Link to="/predictive-weather" className="text-muted-foreground hover:text-primary text-sm transition-colors">{t('footer.predictiveWeather', { defaultValue: 'Predictive Weather' })}</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-foreground font-semibold mb-4">{t('footer.contact')}</h3>
             <ul className="space-y-3">
-              <li className="text-muted-foreground text-sm">{t('footer.email')}</li>
-              <li className="text-muted-foreground text-sm">{t('footer.phone')}</li>
+              <li className="text-muted-foreground text-sm">{t('footer.email', { defaultValue: 'Email: support@smartcropadvisor.com' })}</li>
+              <li className="text-muted-foreground text-sm">{t('footer.phone', { defaultValue: 'Phone: +254 700 123 456' })}</li>
               <li><Link to="/login" className="text-muted-foreground hover:text-foreground text-sm transition-colors">{t('nav.login')}</Link></li>
             </ul>
           </div>
@@ -79,7 +81,7 @@ const Footer = () => {
           </p>
           <div className="flex gap-6">
             <Link to="/contact" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-              Support
+              {t('footer.support', { defaultValue: 'Support' })}
             </Link>
             <Link to="/pricing" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
               {t('footer.privacy')}

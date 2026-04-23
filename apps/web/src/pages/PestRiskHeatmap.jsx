@@ -332,7 +332,7 @@ const PestRiskHeatmapContent = () => {
 const PestRiskHeatmap = () => {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet>
         <title>{t('monitoring.pest_risk.title')} - Smart Crop Advisor</title>
       </Helmet>

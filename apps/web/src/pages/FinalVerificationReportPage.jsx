@@ -18,17 +18,19 @@ import {
 } from 'lucide-react';
 import GlassCard from '@/components/GlassCard.jsx';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useTranslation } from 'react-i18next';
 
 const FinalVerificationReportPage = () => {
+  const { t } = useTranslation();
   const handlePrint = () => {
     window.print();
   };
 
   const dashboards = [
-    "AI Crop Advisor", "Drone Monitoring", "IoT Sensors", "Predictive Weather", 
-    "Disease Detector", "Smart Irrigation", "Blockchain Certification", "Pest Management", 
-    "Satellite Imagery", "Climate Risk", "Precision Farming", "Yield Forecasting", 
-    "Soil Microbiome", "Carbon Footprint", "Community Hub"
+    t('verification.dashboards.aiCropAdvisor', { defaultValue: 'AI Crop Advisor' }), t('verification.dashboards.droneMonitoring', { defaultValue: 'Drone Monitoring' }), t('verification.dashboards.iotSensors', { defaultValue: 'IoT Sensors' }), t('verification.dashboards.predictiveWeather', { defaultValue: 'Predictive Weather' }), 
+    t('verification.dashboards.diseaseDetector', { defaultValue: 'Disease Detector' }), t('verification.dashboards.smartIrrigation', { defaultValue: 'Smart Irrigation' }), t('verification.dashboards.blockchainCertification', { defaultValue: 'Blockchain Certification' }), t('verification.dashboards.pestManagement', { defaultValue: 'Pest Management' }), 
+    t('verification.dashboards.satelliteImagery', { defaultValue: 'Satellite Imagery' }), t('verification.dashboards.climateRisk', { defaultValue: 'Climate Risk' }), t('verification.dashboards.precisionFarming', { defaultValue: 'Precision Farming' }), t('verification.dashboards.yieldForecasting', { defaultValue: 'Yield Forecasting' }), 
+    t('verification.dashboards.soilMicrobiome', { defaultValue: 'Soil Microbiome' }), t('verification.dashboards.carbonFootprint', { defaultValue: 'Carbon Footprint' }), t('verification.dashboards.communityHub', { defaultValue: 'Community Hub' })
   ];
 
   const universalFeatures = [
@@ -57,28 +59,28 @@ const FinalVerificationReportPage = () => {
   ];
 
   return (
-    <div className="animate-in fade-in duration-500 min-h-screen bg-[#050505] pb-20 print:bg-white print:text-black">
-      <Helmet><title>Final Verification Report - Smart Crop Advisor</title></Helmet>
+    <div className="animate-in fade-in duration-500 min-h-screen analytics-theme-bg pb-20 print:bg-white print:text-black">
+      <Helmet><title>{t('verification.title', { defaultValue: 'Final Verification Report - Smart Crop Advisor' })}</title></Helmet>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 print:mb-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-sm font-bold uppercase tracking-wider mb-4 print:border print:border-green-500 print:text-green-700">
-              <ShieldCheck className="w-4 h-4" /> Official Audit Report
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-sm font-bold uppercase tracking-wider mb-4 print:border print:border-green-500 print:text-green-700">
+              <ShieldCheck className="w-4 h-4" /> {t('verification.auditBadge', { defaultValue: 'Official Audit Report' })}
             </div>
             <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-4 print:text-black">
-              System Verification Report
+              {t('verification.heading', { defaultValue: 'System Verification Report' })}
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl print:text-gray-600">
-              Comprehensive quality assurance and feature verification for the Smart Crop Advisor platform.
+              {t('verification.subtitle', { defaultValue: 'Comprehensive quality assurance and feature verification for the Smart Crop Advisor platform.' })}
             </p>
           </div>
           <button 
             onClick={handlePrint} 
             className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium transition-colors print:hidden"
           >
-            <Printer className="w-5 h-5" /> Print Report
+            <Printer className="w-5 h-5" /> {t('verification.print', { defaultValue: 'Print Report' })}
           </button>
         </div>
 
@@ -91,7 +93,7 @@ const FinalVerificationReportPage = () => {
               </div>
               <h3 className="text-3xl font-black text-white print:text-black">15 / 15</h3>
             </div>
-            <p className="text-gray-400 font-medium print:text-gray-600">Dashboards Functional</p>
+            <p className="text-gray-400 font-medium print:text-gray-600">{t('verification.dashboardsFunctional', { defaultValue: 'Dashboards Functional' })}</p>
           </GlassCard>
           
           <GlassCard className="p-6 border-[#00d4ff]/30 bg-[#00d4ff]/5 print:border-gray-300 print:bg-transparent">
@@ -101,7 +103,7 @@ const FinalVerificationReportPage = () => {
               </div>
               <h3 className="text-3xl font-black text-white print:text-black">45+</h3>
             </div>
-            <p className="text-gray-400 font-medium print:text-gray-600">Features Verified</p>
+            <p className="text-gray-400 font-medium print:text-gray-600">{t('verification.featuresVerified', { defaultValue: 'Features Verified' })}</p>
           </GlassCard>
 
           <GlassCard className="p-6 border-[#b300ff]/30 bg-[#b300ff]/5 print:border-gray-300 print:bg-transparent">
@@ -111,7 +113,7 @@ const FinalVerificationReportPage = () => {
               </div>
               <h3 className="text-3xl font-black text-white print:text-black">0</h3>
             </div>
-            <p className="text-gray-400 font-medium print:text-gray-600">Critical Errors Found</p>
+            <p className="text-gray-400 font-medium print:text-gray-600">{t('verification.criticalErrors', { defaultValue: 'Critical Errors Found' })}</p>
           </GlassCard>
         </div>
 
@@ -119,15 +121,15 @@ const FinalVerificationReportPage = () => {
         <div className="print:hidden">
           <Tabs defaultValue="dashboards" className="w-full">
             <TabsList className="w-full flex flex-wrap h-auto bg-white/5 border border-white/10 p-1 rounded-xl mb-8">
-              <TabsTrigger value="dashboards" className="flex-1 text-base py-3 rounded-lg data-[state=active]:bg-[#00d4ff] data-[state=active]:text-black">Dashboards</TabsTrigger>
-              <TabsTrigger value="universal" className="flex-1 text-base py-3 rounded-lg data-[state=active]:bg-[#00d4ff] data-[state=active]:text-black">Universal Features</TabsTrigger>
-              <TabsTrigger value="qa" className="flex-1 text-base py-3 rounded-lg data-[state=active]:bg-[#00d4ff] data-[state=active]:text-black">QA Testing</TabsTrigger>
-              <TabsTrigger value="verdict" className="flex-1 text-base py-3 rounded-lg data-[state=active]:bg-green-500 data-[state=active]:text-black">Final Verdict</TabsTrigger>
+              <TabsTrigger value="dashboards" className="flex-1 text-base py-3 rounded-lg data-[state=active]:bg-[#00d4ff] data-[state=active]:text-black">{t('verification.tabs.dashboards', { defaultValue: 'Dashboards' })}</TabsTrigger>
+              <TabsTrigger value="universal" className="flex-1 text-base py-3 rounded-lg data-[state=active]:bg-[#00d4ff] data-[state=active]:text-black">{t('verification.tabs.universal', { defaultValue: 'Universal Features' })}</TabsTrigger>
+              <TabsTrigger value="qa" className="flex-1 text-base py-3 rounded-lg data-[state=active]:bg-[#00d4ff] data-[state=active]:text-black">{t('verification.tabs.qa', { defaultValue: 'QA Testing' })}</TabsTrigger>
+              <TabsTrigger value="verdict" className="flex-1 text-base py-3 rounded-lg data-[state=active]:bg-green-500 data-[state=active]:text-black">{t('verification.tabs.verdict', { defaultValue: 'Final Verdict' })}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="dashboards" className="space-y-6">
               <GlassCard className="p-8">
-                <h2 className="text-2xl font-bold text-white mb-6">Dashboard Verification Status</h2>
+                <h2 className="text-2xl font-bold text-white mb-6">{t('verification.dashboardStatus', { defaultValue: 'Dashboard Verification Status' })}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {dashboards.map((dash, idx) => (
                     <div key={idx} className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
@@ -141,7 +143,7 @@ const FinalVerificationReportPage = () => {
 
             <TabsContent value="universal" className="space-y-6">
               <GlassCard className="p-8">
-                <h2 className="text-2xl font-bold text-white mb-6">Universal Systems Verification</h2>
+                <h2 className="text-2xl font-bold text-white mb-6">{t('verification.universalSystems', { defaultValue: 'Universal Systems Verification' })}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {universalFeatures.map((feat, idx) => (
                     <div key={idx} className="flex gap-4 p-5 rounded-xl bg-white/5 border border-white/10">
@@ -158,7 +160,7 @@ const FinalVerificationReportPage = () => {
 
             <TabsContent value="qa" className="space-y-6">
               <GlassCard className="p-8">
-                <h2 className="text-2xl font-bold text-white mb-6">Quality Assurance Results</h2>
+                <h2 className="text-2xl font-bold text-white mb-6">{t('verification.qaResults', { defaultValue: 'Quality Assurance Results' })}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {qaResults.map((qa, idx) => (
                     <div key={idx} className="p-5 rounded-xl bg-white/5 border border-white/10">
@@ -184,28 +186,28 @@ const FinalVerificationReportPage = () => {
                 <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-green-500/20 mb-6">
                   <Award className="w-12 h-12 text-green-400" />
                 </div>
-                <h2 className="text-4xl font-black text-white mb-4 tracking-tight">PRODUCTION READY</h2>
+                <h2 className="text-4xl font-black text-white mb-4 tracking-tight">{t('verification.productionReady', { defaultValue: 'PRODUCTION READY' })}</h2>
                 <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
-                  The Smart Crop Advisor platform has successfully passed all verification checks. All 15 dashboards, universal systems, and analytics modules are fully functional, secure, and optimized for deployment.
+                  {t('verification.verdictParagraph', { defaultValue: 'The Smart Crop Advisor platform has successfully passed all verification checks. All 15 dashboards, universal systems, and analytics modules are fully functional, secure, and optimized for deployment.' })}
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
                   <div className="p-6 rounded-xl bg-black/40 border border-white/10">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                      <Star className="w-5 h-5 text-yellow-400" /> Recommendations
+                      <Star className="w-5 h-5 text-yellow-400" /> {t('verification.recommendations', { defaultValue: 'Recommendations' })}
                     </h3>
                     <ul className="space-y-3 text-gray-400">
-                      <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 shrink-0"/> Monitor real-world API usage limits during initial rollout.</li>
-                      <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 shrink-0"/> Gather user feedback on the new AR Field Overlay feature.</li>
-                      <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 shrink-0"/> Schedule routine checks for AI model drift every 30 days.</li>
+                      <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 shrink-0"/> {t('verification.recommendation1', { defaultValue: 'Monitor real-world API usage limits during initial rollout.' })}</li>
+                      <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 shrink-0"/> {t('verification.recommendation2', { defaultValue: 'Gather user feedback on the new AR Field Overlay feature.' })}</li>
+                      <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 shrink-0"/> {t('verification.recommendation3', { defaultValue: 'Schedule routine checks for AI model drift every 30 days.' })}</li>
                     </ul>
                   </div>
                   <div className="p-6 rounded-xl bg-black/40 border border-white/10">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                      <FileText className="w-5 h-5 text-[#00d4ff]" /> Conclusion
+                      <FileText className="w-5 h-5 text-[#00d4ff]" /> {t('verification.conclusion', { defaultValue: 'Conclusion' })}
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
-                      The system architecture demonstrates high resilience and scalability. The integration of PocketBase for real-time sync and the comprehensive documentation suite ensures a smooth onboarding experience for both farmers and administrators.
+                      {t('verification.conclusionParagraph', { defaultValue: 'The system architecture demonstrates high resilience and scalability. The integration of PocketBase for real-time sync and the comprehensive documentation suite ensures a smooth onboarding experience for both farmers and administrators.' })}
                     </p>
                   </div>
                 </div>

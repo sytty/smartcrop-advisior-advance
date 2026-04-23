@@ -274,6 +274,74 @@ html {
       inset 0 1px 0 hsla(0 0% 100% / 0.4);
   }
 
+  .feature-shell {
+    position: relative;
+    border-radius: 2rem;
+    border: 1px solid hsla(var(--border) / 0.62);
+    background:
+      radial-gradient(90% 120% at 0% 0%, hsla(var(--secondary) / 0.16), transparent 55%),
+      radial-gradient(70% 90% at 100% 100%, hsla(var(--accent) / 0.12), transparent 50%),
+      linear-gradient(155deg, hsla(var(--card) / 0.92), hsla(var(--card) / 0.75));
+    box-shadow:
+      0 24px 56px hsla(var(--brand-night) / 0.12),
+      inset 0 1px 0 hsla(0 0% 100% / 0.42);
+    overflow: hidden;
+  }
+
+  .feature-shell::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(125deg, hsla(0 0% 100% / 0.22), transparent 26%, transparent 70%, hsla(0 0% 100% / 0.18));
+    mix-blend-mode: soft-light;
+  }
+
+  .feature-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 999px;
+    border: 1px solid hsla(var(--primary) / 0.28);
+    background: hsla(var(--primary) / 0.12);
+    color: hsl(var(--primary));
+    padding: 0.35rem 0.8rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .insight-flag {
+    border-radius: 1rem;
+    border: 1px solid hsla(var(--border) / 0.7);
+    background: hsla(var(--card) / 0.82);
+    padding: 0.85rem 1rem;
+  }
+
+  .insight-flag.critical {
+    border-color: hsla(var(--destructive) / 0.32);
+    background: hsla(var(--destructive) / 0.1);
+  }
+
+  .insight-flag.warning {
+    border-color: hsla(var(--accent) / 0.35);
+    background: hsla(var(--accent) / 0.1);
+  }
+
+  .insight-flag.good {
+    border-color: hsla(var(--primary) / 0.35);
+    background: hsla(var(--primary) / 0.12);
+  }
+
+  .analytics-theme-bg {
+    background:
+      radial-gradient(95rem 60rem at 95% -10%, hsla(var(--secondary) / 0.2), transparent 55%),
+      radial-gradient(75rem 55rem at 0% 22%, hsla(var(--primary) / 0.24), transparent 52%),
+      radial-gradient(60rem 40rem at 50% 100%, hsla(var(--accent) / 0.12), transparent 62%),
+      linear-gradient(180deg, hsla(var(--background-2) / 1) 0%, hsla(var(--background) / 1) 100%);
+  }
+
   .interactive-surface:focus-visible {
     outline: 2px solid hsl(var(--ring));
     outline-offset: 3px;

@@ -1,6 +1,20 @@
 import { spawn } from 'node:child_process';
+import os from 'node:os';
 
 const npmExecPath = process.env.npm_execpath;
+const isWindows = process.platform === 'win32';
+
+function getNetworkIP() {
+  const interfaces = os.networkInterfaces();
+  for (const name of Object.keys(interfaces)) {
+    for (const iface of interfaces[name]) {
+      if (iface.family === 'IPv4' && !iface.internal) {
+        return iface.address;
+      }
+    }
+  }
+  return '127.0.0.1';
+}
 
 const services = [
   {
@@ -24,14 +38,20 @@ const children = [];
 let shuttingDown = false;
 
 function startService(service) {
-  const command = npmExecPath ? process.execPath : (process.platform === 'win32' ? 'npm.cmd' : 'npm');
+  // On Windows, use shell:true to avoid spawn EINVAL errors.
+  // `shell:true` lets Windows resolve .cmd/.bat wrappers (like npm.cmd) correctly.
+  const command = npmExecPath ? process.execPath : 'npm';
   const args = npmExecPath ? [npmExecPath, ...service.args] : service.args;
 
   const child = spawn(command, args, {
     cwd: process.cwd(),
-    shell: false,
+    shell: isWindows,
     stdio: 'inherit',
     env: process.env,
+  });
+
+  child.on('error', (err) => {
+    console.error(`\n[${service.name}] failed to start: ${err.message}`);
   });
 
   child.on('exit', (code) => {
@@ -64,6 +84,7 @@ async function printHealthSummary() {
 
   const allHealthy = checks.every((check) => check.ok);
   const timestamp = new Date().toLocaleTimeString();
+  const networkIP = getNetworkIP();
 
   console.log('\n=== Dev Stack Health ===');
   console.log(`Time: ${timestamp}`);
@@ -73,6 +94,21 @@ async function printHealthSummary() {
   }
   console.log(allHealthy ? 'Overall: HEALTHY' : 'Overall: STARTING/DEGRADED');
   console.log('========================\n');
+
+  if (allHealthy) {
+    console.log('📌 BACKEND ACCESS POINTS:');
+    console.log('─────────────────────────────────────');
+    console.log(`🌐 PocketBase (Local):   http://127.0.0.1:8090`);
+    console.log(`🌐 PocketBase (Network): http://${networkIP}:8090`);
+    console.log(`   Dashboard: http://${networkIP}:8090/_/`);
+    console.log('');
+    console.log(`🔌 API Server (Local):   http://127.0.0.1:3001`);
+    console.log(`🔌 API Server (Network): http://${networkIP}:3001`);
+    console.log('');
+    console.log(`💻 Web App (Local):      http://127.0.0.1:3000`);
+    console.log(`💻 Web App (Network):    http://${networkIP}:3000`);
+    console.log('─────────────────────────────────────\n');
+  }
 
   return allHealthy;
 }
@@ -86,7 +122,12 @@ function shutdown(exitCode = 0) {
 
   for (const child of children) {
     if (!child.killed) {
-      child.kill('SIGTERM');
+      // On Windows, SIGTERM doesn't work; use taskkill via child.kill()
+      try {
+        child.kill();
+      } catch {
+        // ignore
+      }
     }
   }
 

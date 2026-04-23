@@ -78,6 +78,12 @@ const apiConfig = {
     windowMs: parseInteger(process.env.RATE_LIMIT_WINDOW_MS, 5 * 60 * 1000),
     maxRequests: parseInteger(process.env.RATE_LIMIT_MAX, 100),
   },
+  ml: {
+    providerUrl: (process.env.ML_PROVIDER_URL || process.env.VITE_ML_API_URL || '').replace(/\/+$/, ''),
+    providerApiKey: process.env.ML_PROVIDER_API_KEY || '',
+    timeoutMs: parseInteger(process.env.ML_PROVIDER_TIMEOUT_MS, 12000),
+    enabled: parseBoolean(process.env.ML_PROVIDER_ENABLED, Boolean(process.env.ML_PROVIDER_URL || process.env.VITE_ML_API_URL)),
+  },
   pocketbase: {
     baseUrl: (process.env.PB_BASE_URL || process.env.POCKETBASE_URL || 'http://127.0.0.1:8090').replace(/\/+$/, ''),
     healthRetries: parseInteger(process.env.PB_HEALTH_RETRIES, 10),
@@ -94,6 +100,12 @@ function getPublicApiConfig() {
     port: apiConfig.port,
     corsOrigins: apiConfig.corsOrigins === '*' ? '*' : [...apiConfig.corsOrigins],
     rateLimit: { ...apiConfig.rateLimit },
+    ml: {
+      enabled: apiConfig.ml.enabled,
+      providerUrl: apiConfig.ml.providerUrl,
+      hasApiKey: Boolean(apiConfig.ml.providerApiKey),
+      timeoutMs: apiConfig.ml.timeoutMs,
+    },
     pocketbase: {
       baseUrl: apiConfig.pocketbase.baseUrl,
       hasSuperuserCredentials: Boolean(

@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "name": "Horizons Smart Agriculture Platform",
+    "version": "1.0.0",
+    "description": "Production-grade PocketBase configuration for AI-powered farm management",
+    "environment": "production",
+    "lastUpdated": "2026-04-22T00:00:00Z"
+  },
+  "database": {
+    "maxConnections": 25,
+    "maxIdleConnections": 5,
+    "connectionMaxLifetime": 3600000,
+    "enableWAL": true,
+    "enableForeignKeys": true,
+    "autoVacuum": "INCREMENTAL",
+    "vacuumIncrementalStep": 1000
+  },
+  "api": {
+    "maxRequestSize": 5242880,
+    "requestTimeout": 30000,
+    "enableCors": true,
+    "enableCompression": true,
+    "enableHealthCheck": true
+  },
+  "security": {
+    "enableSSL": false,
+    "minPasswordLength": 8,
+    "passwordHashingAlgorithm": "bcrypt",
+    "enableRateLimiting": true,
+    "rateLimitPerIP": 300,
+    "rateLimitBurst": 10,
+    "corsAllowedOrigins": [
+      "http://localhost:3000",
+      "http://127.0.0.1:3000",
+      "http://10.98.181.228:3000"
+    ]
+  },
+  "files": {
+    "enableUpload": true,
+    "maxFileSize": 10485760,
+    "allowedMimeTypes": [
+      "image/jpeg",
+      "image/png",
+      "image/webp",
+      "application/pdf",
+      "text/csv"
+    ],
+    "storageDirectory": "./pb_data/storage"
+  },
+  "backup": {
+    "enabled": true,
+    "intervalMinutes": 1440,
+    "retentionDays": 7,
+    "storageDirectory": "./pb_data/backups"
+  },
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "enableRequestLogging": true,
+    "enableErrorLogging": true,
+    "logDirectory": "./pb_data/logs"
+  },
+  "cache": {
+    "enabled": true,
+    "ttlSeconds": 3600,
+    "maxSize": 104857600
+  },
+  "monitoring": {
+    "enableMetrics": true,
+    "metricsInterval": 60000,
+    "enableHealthChecks": true,
+    "healthCheckInterval": 60000
+  },
+  "collections": {
+    "autoInitialize": true,
+    "migrationsDirectory": "./pb_migrations",
+    "hooksDirectory": "./pb_hooks"
+  }
+}

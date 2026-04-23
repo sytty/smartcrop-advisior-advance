@@ -9,7 +9,7 @@ export const HelpTooltip = ({ children, content }) => (
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger asChild>{children}</TooltipTrigger>
-      <TooltipContent className="bg-[#0a0a0a] border border-white/20 text-white p-3 max-w-xs rounded-xl shadow-xl">
+      <TooltipContent className="bg-[hsl(var(--brand-night))] border border-white/20 text-white p-3 max-w-xs rounded-xl shadow-xl">
         <p className="text-sm leading-relaxed">{content}</p>
       </TooltipContent>
     </Tooltip>
@@ -54,7 +54,7 @@ const HelpSystem = () => {
             <motion.div 
               initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-full max-w-md bg-[#0a0a0a] border-l border-white/10 shadow-2xl z-50 flex flex-col"
+              className="fixed top-0 right-0 bottom-0 w-full max-w-md bg-[hsl(var(--brand-night))] border-l border-white/10 shadow-2xl z-50 flex flex-col"
             >
               <div className="p-6 border-b border-white/10 flex justify-between items-center bg-white/5">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-2">

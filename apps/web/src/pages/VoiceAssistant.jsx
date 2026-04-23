@@ -5,7 +5,7 @@ import { Mic, MicOff, Volume2, MessageSquare, Clock, Loader2, Sparkles, Language
 import { toast } from 'sonner';
 import pb from '@/lib/pocketbaseClient';
 import { useAuth } from '@/contexts/AuthContext.jsx';
-import { generateVoiceResponses } from '@/lib/mockData.js';
+import mlModelService from '@/lib/mlModelService.js';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import ErrorBoundary from '@/components/ErrorBoundary.jsx';
 import GlassCard from '@/components/GlassCard.jsx';
@@ -20,14 +20,6 @@ const languages = [
   { code: 'sw-KE', name: 'Swahili' }
 ];
 
-const sampleQueries = [
-  'What should I plant today?',
-  'Is my soil ready for planting?',
-  "What's the pest risk in my area?",
-  'How much fertilizer do I need?',
-  'When should I harvest?'
-];
-
 const VoiceAssistantContent = () => {
   const { t } = useTranslation();
   const { currentUser } = useAuth();
@@ -39,6 +31,14 @@ const VoiceAssistantContent = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const sampleQueries = [
+    t('voiceAssistant.samples.q1', { defaultValue: 'What should I plant today?' }),
+    t('voiceAssistant.samples.q2', { defaultValue: 'Is my soil ready for planting?' }),
+    t('voiceAssistant.samples.q3', { defaultValue: "What's the pest risk in my area?" }),
+    t('voiceAssistant.samples.q4', { defaultValue: 'How much fertilizer do I need?' }),
+    t('voiceAssistant.samples.q5', { defaultValue: 'When should I harvest?' })
+  ];
 
   const recognitionRef = useRef(null);
   const transcriptRef = useRef('');
@@ -130,7 +130,7 @@ const VoiceAssistantContent = () => {
       recognitionRef.current.start();
       setIsListening(true);
     } catch (startError) {
-      toast.error('Failed to start microphone. Check permissions.');
+      toast.error(t('voiceAssistant.errors.micStart', { defaultValue: 'Failed to start microphone. Check permissions.' }));
     }
   };
 
@@ -146,9 +146,11 @@ const VoiceAssistantContent = () => {
   const handleProcessQuery = useCallback(async (queryText) => {
     setIsProcessing(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 900));
-
-      const responseText = generateVoiceResponses(queryText);
+      const inference = await mlModelService.infer('voice_assistant', {
+        query: queryText,
+        language,
+      });
+      const responseText = inference.response;
       const langName = languages.find((l) => l.code === language)?.name || 'English';
 
       try {
@@ -174,7 +176,7 @@ const VoiceAssistantContent = () => {
       setTranscript('');
       transcriptRef.current = '';
     } catch (processError) {
-      toast.error('Failed to process query');
+      toast.error(t('voiceAssistant.errors.process', { defaultValue: 'Failed to process query' }));
     } finally {
       setIsProcessing(false);
     }
@@ -211,7 +213,7 @@ const VoiceAssistantContent = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary mb-3">
-              <Sparkles className="w-3 h-3 mr-1" /> Conversational farm intelligence
+              <Sparkles className="w-3 h-3 mr-1" /> {t('voiceAssistant.badge', { defaultValue: 'Conversational farm intelligence' })}
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2 flex items-center">
               <MessageSquare className="w-8 h-8 mr-3 text-primary" />
@@ -293,7 +295,7 @@ const VoiceAssistantContent = () => {
                       <button
                         onClick={() => speakResponse(item.response)}
                         className="absolute top-4 right-4 p-2 rounded-lg bg-card/70 text-muted-foreground hover:text-foreground hover:bg-card transition-colors opacity-0 group-hover:opacity-100"
-                        aria-label="Replay audio"
+                        aria-label={t('voiceAssistant.replayAudio', { defaultValue: 'Replay audio' })}
                       >
                         <Volume2 className="w-4 h-4" />
                       </button>
@@ -339,7 +341,7 @@ const VoiceAssistantContent = () => {
                 <div className="rounded-2xl border border-dashed border-border/70 bg-card/60 px-4 py-6 text-center">
                   <MessageSquare className="w-8 h-8 text-primary/60 mx-auto mb-2" />
                   <p className="text-sm text-foreground font-semibold mb-1">{t('intelligence.voice_assistant.noHistory')}</p>
-                  <p className="text-xs text-muted-foreground">Your conversations will appear here once you start asking questions.</p>
+                  <p className="text-xs text-muted-foreground">{t('voiceAssistant.historyHint', { defaultValue: 'Your conversations will appear here once you start asking questions.' })}</p>
                 </div>
               )}
             </div>

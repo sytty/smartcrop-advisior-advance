@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Activity, TrendingUp, TrendingDown, BrainCircuit, AlertCircle, Database } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
 import GlassCard from '@/components/GlassCard.jsx';
+import { toast } from 'sonner';
 import DriftAlertBanner from '@/components/DriftAlertBanner.jsx';
 import ModelPerformanceComparison from '@/components/ModelPerformanceComparison.jsx';
 import ConfidenceScoreDistribution from '@/components/ConfidenceScoreDistribution.jsx';
@@ -42,7 +43,8 @@ const ModelDriftDetection = () => {
           setDriftStatus(status);
         }
       } catch (error) {
-        console.error(error);
+        console.error('[ModelDrift] Failed to fetch metrics:', error);
+        toast.error('Unable to load model drift data');
       }
     };
     
@@ -64,7 +66,7 @@ const ModelDriftDetection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet>
         <title>{t('admin.model_drift.title')} - Smart Crop Advisor</title>
       </Helmet>

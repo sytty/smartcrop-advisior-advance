@@ -301,6 +301,16 @@ export default defineConfig({
 			'Cross-Origin-Embedder-Policy': 'credentialless',
 		},
 		allowedHosts: true,
+		proxy: {
+			'/hcgi/api': {
+				target: 'http://127.0.0.1:3001',
+				changeOrigin: true,
+			},
+			'/api': {
+				target: 'http://127.0.0.1:3001',
+				changeOrigin: true,
+			},
+		},
 	},
 	resolve: {
 		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json',],

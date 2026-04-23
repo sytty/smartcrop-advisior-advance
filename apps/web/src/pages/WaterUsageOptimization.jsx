@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { Droplets, Download, Loader2, Info } from 'lucide-react';
-import { generateWaterUsageData } from '@/lib/mockData.js';
+import mlModelService from '@/lib/mlModelService.js';
 import { Button } from '@/components/ui/button';
 import ErrorBoundary from '@/components/ErrorBoundary.jsx';
 import GlassCard from '@/components/GlassCard.jsx';
@@ -22,19 +22,19 @@ const WaterUsageOptimizationContent = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [efficiency, setEfficiency] = useState(82);
 
   useEffect(() => {
     let mounted = true;
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        await new Promise(resolve => setTimeout(resolve, 600));
+        const inference = await mlModelService.infer('water_usage_optimization');
         if (!mounted) return;
-        
-        const mockData = generateWaterUsageData();
-        if (!mockData || mockData.length === 0) throw new Error("Failed to load water usage data");
-        
-        setData(mockData);
+        if (!inference.rows || inference.rows.length === 0) throw new Error('Failed to load water usage data');
+
+        setData(inference.rows);
+        setEfficiency(inference.efficiency || 82);
       } catch (err) {
         console.error("WaterUsage Error:", err);
         if (mounted) setError(err.message);
@@ -75,7 +75,7 @@ const WaterUsageOptimizationContent = () => {
             <h3 className="text-lg font-semibold text-white">{t('analytics.water.chart')}</h3>
             <div className="flex items-center text-sm text-gray-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
               <Info className="w-4 h-4 mr-2 text-[#00d4ff]" />
-              {t('analytics.water.efficiency')}: <span className="text-white font-bold ml-1">82/100</span>
+              {t('analytics.water.efficiency')}: <span className="text-white font-bold ml-1">{efficiency}/100</span>
             </div>
           </div>
           <div className="h-[450px] w-full">
@@ -109,7 +109,7 @@ const WaterUsageOptimizationContent = () => {
 const WaterUsageOptimization = () => {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet><title>{t('analytics.water.title')} - Smart Crop Advisor</title></Helmet>
       <ErrorBoundary componentName="WaterUsageOptimization">
         <WaterUsageOptimizationContent />

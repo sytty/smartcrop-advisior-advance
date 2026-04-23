@@ -45,7 +45,7 @@ const DocumentationSearch = ({ isOpen, onClose }) => {
           initial={{ opacity: 0, scale: 0.95, y: -20 }} 
           animate={{ opacity: 1, scale: 1, y: 0 }} 
           exit={{ opacity: 0, scale: 0.95, y: -20 }}
-          className="relative w-full max-w-2xl bg-[#0a0a0a] border border-white/20 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]"
+          className="relative w-full max-w-2xl bg-[hsl(var(--brand-night))] border border-white/20 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]"
         >
           <div className="flex items-center px-4 border-b border-white/10 bg-white/5">
             <Search className="w-6 h-6 text-[#00d4ff]" />

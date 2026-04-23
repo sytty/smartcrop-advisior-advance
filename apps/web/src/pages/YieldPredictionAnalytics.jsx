@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { TrendingUp, Download, Sprout, AlertTriangle, Filter } from 'lucide-react';
-import { generateYieldPredictionData } from '@/lib/mockData.js';
+import mlModelService from '@/lib/mlModelService.js';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import ErrorBoundary from '@/components/ErrorBoundary.jsx';
@@ -33,19 +33,21 @@ const YieldPredictionAnalyticsContent = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCrop, setSelectedCrop] = useState('All Crops');
+  const [confidence, setConfidence] = useState(89);
+  const [risk, setRisk] = useState('Low Soil Moisture');
 
   useEffect(() => {
     let mounted = true;
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        await new Promise(resolve => setTimeout(resolve, 600));
+        const inference = await mlModelService.infer('yield_prediction_analytics', { crop: selectedCrop });
         if (!mounted) return;
-        
-        const mockData = generateYieldPredictionData();
-        if (!mockData || mockData.length === 0) throw new Error("Failed to generate yield data");
-        
-        setData(mockData);
+        if (!inference.rows || inference.rows.length === 0) throw new Error('Failed to generate yield data');
+
+        setData(inference.rows);
+        setConfidence(inference.confidence || 89);
+        setRisk(inference.risk || 'Low Soil Moisture');
         setError(null);
       } catch (err) {
         console.error("YieldPrediction Error:", err);
@@ -127,7 +129,7 @@ const YieldPredictionAnalyticsContent = () => {
               </div>
             </div>
             <div>
-              <p className="text-3xl font-bold text-white">89%</p>
+              <p className="text-3xl font-bold text-white">{confidence}%</p>
             </div>
           </GlassCard>
         </motion.div>
@@ -141,7 +143,7 @@ const YieldPredictionAnalyticsContent = () => {
               </div>
             </div>
             <div>
-              <p className="text-xl font-bold text-white">Low Soil Moisture</p>
+              <p className="text-xl font-bold text-white">{risk}</p>
             </div>
           </GlassCard>
         </motion.div>
@@ -197,7 +199,7 @@ const YieldPredictionAnalyticsContent = () => {
 const YieldPredictionAnalytics = () => {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet><title>{t('analytics.yield.title')} - Smart Crop Advisor</title></Helmet>
       <ErrorBoundary componentName="YieldPredictionAnalytics">
         <YieldPredictionAnalyticsContent />

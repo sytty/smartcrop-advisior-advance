@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Leaf, LogOut, User, Database, ChevronDown, BarChart2, Cpu, Sparkles } from 'lucide-react';
+import { Menu, X, Leaf, LogOut, User, Database, ChevronDown, BarChart2, Cpu, Sparkles, Settings } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext.jsx';
@@ -9,12 +9,14 @@ import ConnectionStatusBadge from './ConnectionStatusBadge.jsx';
 import { useOfflineSync } from '@/hooks/useOfflineSync.js';
 import { useBackendStatus } from '@/hooks/useBackendStatus.js';
 import LanguageSelector from './LanguageSelector.jsx';
+import NotificationCenterButton from './NotificationCenterButton.jsx';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [featuresOpen, setFeaturesOpen] = useState(false);
   const [analyticsOpen, setAnalyticsOpen] = useState(false);
   const [futuristicOpen, setFuturisticOpen] = useState(false);
+  const [farmOpen, setFarmOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -30,40 +32,47 @@ const Header = () => {
   ];
 
   const advancedFeatures = [
-    { name: 'Digital Twin', href: '/digital-twin' },
-    { name: 'Pest Risk Heatmap', href: '/pest-risk-heatmap' },
-    { name: 'Voice Assistant', href: '/voice-assistant' },
-    { name: 'AR Field Overlay', href: '/ar-field-overlay' },
-    { name: 'Disease AI', href: '/disease-detection-advanced' }
+    { name: t('header.tools.digitalTwin', { defaultValue: 'Digital Twin' }), href: '/digital-twin' },
+    { name: t('header.tools.pestRiskHeatmap', { defaultValue: 'Pest Risk Heatmap' }), href: '/pest-risk-heatmap' },
+    { name: t('header.tools.voiceAssistant', { defaultValue: 'Voice Assistant' }), href: '/voice-assistant' },
+    { name: t('header.tools.arFieldOverlay', { defaultValue: 'AR Field Overlay' }), href: '/ar-field-overlay' },
+    { name: t('header.tools.diseaseAi', { defaultValue: 'Disease AI' }), href: '/disease-detection-advanced' }
   ];
 
   const analyticsFeatures = [
-    { name: 'Yield Prediction', href: '/yield-prediction' },
-    { name: 'Soil Health', href: '/soil-health-analytics' },
-    { name: 'Weather Impact', href: '/weather-impact' },
-    { name: 'Cost Benefit', href: '/cost-benefit-analysis' },
-    { name: 'Crop Comparison', href: '/crop-comparison' },
-    { name: 'Market Prices', href: '/market-prices' },
-    { name: 'Water Optimization', href: '/water-optimization' },
-    { name: 'Farmer Performance', href: '/farmer-performance', adminOnly: true }
+    { name: t('header.analytics.yieldPrediction', { defaultValue: 'Yield Prediction' }), href: '/yield-prediction' },
+    { name: t('header.analytics.soilHealth', { defaultValue: 'Soil Health' }), href: '/soil-health-analytics' },
+    { name: t('header.analytics.weatherImpact', { defaultValue: 'Weather Impact' }), href: '/weather-impact' },
+    { name: t('header.analytics.costBenefit', { defaultValue: 'Cost Benefit' }), href: '/cost-benefit-analysis' },
+    { name: t('header.analytics.cropComparison', { defaultValue: 'Crop Comparison' }), href: '/crop-comparison' },
+    { name: t('header.analytics.marketPrices', { defaultValue: 'Market Prices' }), href: '/market-prices' },
+    { name: t('header.analytics.waterOptimization', { defaultValue: 'Water Optimization' }), href: '/water-optimization' },
+    { name: t('header.analytics.farmerPerformance', { defaultValue: 'Farmer Performance' }), href: '/farmer-performance', adminOnly: true }
   ];
 
   const futuristicFeatures = [
-    { name: 'AI Crop Advisor', href: '/ai-crop-advisor' },
-    { name: 'Drone Monitoring', href: '/drone-monitoring' },
-    { name: 'IoT Sensors', href: '/iot-sensors' },
-    { name: 'Predictive Weather', href: '/predictive-weather' },
-    { name: 'Disease Detector', href: '/disease-detector' },
-    { name: 'Smart Irrigation', href: '/smart-irrigation' },
-    { name: 'Blockchain Cert', href: '/blockchain-certification' },
-    { name: 'Pest Management', href: '/pest-management' },
-    { name: 'Satellite Imagery', href: '/satellite-imagery' },
-    { name: 'Climate Risk', href: '/climate-risk' },
-    { name: 'Precision Farming', href: '/precision-farming' },
-    { name: 'Yield Forecasting', href: '/yield-forecasting' },
-    { name: 'Soil Microbiome', href: '/soil-microbiome' },
-    { name: 'Carbon Footprint', href: '/carbon-footprint' },
-    { name: 'Community Hub', href: '/community-hub' }
+    { name: t('header.futuristic.aiCropAdvisor', { defaultValue: 'AI Crop Advisor' }), href: '/ai-crop-advisor' },
+    { name: t('header.futuristic.droneMonitoring', { defaultValue: 'Drone Monitoring' }), href: '/drone-monitoring' },
+    { name: t('header.futuristic.iotSensors', { defaultValue: 'IoT Sensors' }), href: '/iot-sensors' },
+    { name: t('header.futuristic.predictiveWeather', { defaultValue: 'Predictive Weather' }), href: '/predictive-weather' },
+    { name: t('header.futuristic.diseaseDetector', { defaultValue: 'Disease Detector' }), href: '/disease-detector' },
+    { name: t('header.futuristic.smartIrrigation', { defaultValue: 'Smart Irrigation' }), href: '/smart-irrigation' },
+    { name: t('header.futuristic.blockchainCert', { defaultValue: 'Blockchain Cert' }), href: '/blockchain-certification' },
+    { name: t('header.futuristic.pestManagement', { defaultValue: 'Pest Management' }), href: '/pest-management' },
+    { name: t('header.futuristic.satelliteImagery', { defaultValue: 'Satellite Imagery' }), href: '/satellite-imagery' },
+    { name: t('header.futuristic.climateRisk', { defaultValue: 'Climate Risk' }), href: '/climate-risk' },
+    { name: t('header.futuristic.precisionFarming', { defaultValue: 'Precision Farming' }), href: '/precision-farming' },
+    { name: t('header.futuristic.yieldForecasting', { defaultValue: 'Yield Forecasting' }), href: '/yield-forecasting' },
+    { name: t('header.futuristic.soilMicrobiome', { defaultValue: 'Soil Microbiome' }), href: '/soil-microbiome' },
+    { name: t('header.futuristic.carbonFootprint', { defaultValue: 'Carbon Footprint' }), href: '/carbon-footprint' },
+    { name: t('header.futuristic.communityHub', { defaultValue: 'Community Hub' }), href: '/community-hub' }
+  ];
+
+  const farmFeatures = [
+    { name: t('header.farm.fieldManagement', { defaultValue: 'Field Management' }), href: '/fields' },
+    { name: t('header.farm.cropManagement', { defaultValue: 'Crop Management' }), href: '/crops' },
+    { name: t('header.farm.phCalculator', { defaultValue: 'pH Calculator' }), href: '/ph-calculator' },
+    { name: t('header.farm.profileSettings', { defaultValue: 'Profile / Settings' }), href: '/settings' },
   ];
 
   const isActive = (href) => {
@@ -91,8 +100,8 @@ const Header = () => {
               <Leaf className="w-6 h-6 text-white" />
             </div>
             <div className="hidden sm:block leading-tight">
-              <span className="block text-base font-extrabold text-foreground tracking-tight">Smart Crop Advisor</span>
-              <span className="block text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Intelligence Platform</span>
+              <span className="block text-base font-extrabold text-foreground tracking-tight">{t('header.brand.title', { defaultValue: 'Smart Crop Advisor' })}</span>
+              <span className="block text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{t('header.brand.subtitle', { defaultValue: 'Intelligence Platform' })}</span>
             </div>
           </Link>
 
@@ -150,6 +159,26 @@ const Header = () => {
                         className="absolute top-full left-0 w-48 glass-card rounded-xl shadow-xl py-2 overflow-hidden"
                       >
                         {advancedFeatures.map(feat => (
+                          <Link key={feat.name} to={feat.href} className="block px-4 py-2 text-sm text-foreground/80 hover:bg-primary/10 hover:text-foreground transition-colors">
+                            {feat.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <div className="relative" onMouseEnter={() => setFarmOpen(true)} onMouseLeave={() => setFarmOpen(false)}>
+                  <button className="flex items-center text-sm font-semibold text-foreground/80 hover:text-foreground transition-colors py-2">
+                    <User className="w-4 h-4 mr-1" /> {t('header.farm.title', { defaultValue: 'Farm Management' })} <ChevronDown className="w-4 h-4 ml-1" />
+                  </button>
+                  <AnimatePresence>
+                    {farmOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
+                        className="absolute top-full left-0 w-56 glass-card rounded-xl shadow-xl py-2 overflow-hidden"
+                      >
+                        {farmFeatures.map((feat) => (
                           <Link key={feat.name} to={feat.href} className="block px-4 py-2 text-sm text-foreground/80 hover:bg-primary/10 hover:text-foreground transition-colors">
                             {feat.name}
                           </Link>
@@ -219,6 +248,12 @@ const Header = () => {
 
             <LanguageSelector />
 
+            {isAuthenticated && (
+              <div className="hidden sm:block">
+                <NotificationCenterButton userId={currentUser?.id} />
+              </div>
+            )}
+
             <div className="hidden md:flex items-center gap-4">
               {!isAuthenticated ? (
                 <>
@@ -229,12 +264,17 @@ const Header = () => {
                 </>
               ) : (
                 <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2 text-sm text-foreground/80">
+                  <Button asChild variant="ghost" size="icon" className="text-foreground/75 hover:text-foreground hover:bg-primary/10 rounded-xl">
+                    <Link to="/settings">
+                      <Settings className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                  <Link to="/settings" className="flex items-center gap-2 text-sm text-foreground/80 hover:text-foreground transition-colors">
                     <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
                       <User className="w-4 h-4" />
                     </div>
                     <span className="hidden lg:block">{currentUser?.name}</span>
-                  </div>
+                  </Link>
                   <Button variant="ghost" size="icon" onClick={handleLogout} className="text-foreground/75 hover:text-foreground hover:bg-primary/10 rounded-xl">
                     <LogOut className="w-4 h-4" />
                   </Button>
@@ -260,7 +300,7 @@ const Header = () => {
             <div className="px-4 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
               {!isAuthenticated && (
                 <div className="glass-panel rounded-2xl p-4 mb-2">
-                  <p className="text-sm font-semibold text-foreground flex items-center gap-2"><Sparkles className="w-4 h-4 text-accent" /> Global farm insights at your fingertips</p>
+                  <p className="text-sm font-semibold text-foreground flex items-center gap-2"><Sparkles className="w-4 h-4 text-accent" /> {t('header.mobile.insightsBanner', { defaultValue: 'Global farm insights at your fingertips' })}</p>
                 </div>
               )}
 
@@ -283,6 +323,13 @@ const Header = () => {
 
                   <div className="px-4 py-2 text-xs font-bold text-muted-foreground uppercase tracking-wider">{t('nav.tools')}</div>
                   {advancedFeatures.map(feat => (
+                    <Link key={feat.name} to={feat.href} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm font-semibold text-foreground/80 hover:bg-primary/10 hover:text-foreground">
+                      {feat.name}
+                    </Link>
+                  ))}
+
+                  <div className="px-4 py-2 text-xs font-bold text-muted-foreground uppercase tracking-wider">{t('header.farm.title', { defaultValue: 'Farm Management' })}</div>
+                  {farmFeatures.map((feat) => (
                     <Link key={feat.name} to={feat.href} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm font-semibold text-foreground/80 hover:bg-primary/10 hover:text-foreground">
                       {feat.name}
                     </Link>

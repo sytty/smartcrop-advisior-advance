@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Link as LinkIcon, QrCode, FileText, History, Share2, Download, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -13,6 +14,7 @@ import pb from '@/lib/pocketbaseClient.js';
 import { useAuth } from '@/contexts/AuthContext.jsx';
 
 export default function BlockchainCropCertification() {
+  const { t } = useTranslation();
   const { currentUser } = useAuth();
   const [certifications, setCertifications] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -27,7 +29,8 @@ export default function BlockchainCropCertification() {
         });
         setCertifications(records);
       } catch (error) {
-        console.error(error);
+        console.error('[BlockchainCert] Failed to load certifications:', error);
+        toast.error(t('blockchainCert.toast.loadFailed', { defaultValue: 'Unable to load certifications' }));
       } finally {
         setLoading(false);
       }
@@ -37,7 +40,7 @@ export default function BlockchainCropCertification() {
 
   const handleRequest = (e) => {
     e.preventDefault();
-    toast.success('Certification request submitted to the blockchain network.');
+    toast.success(t('blockchainCert.toast.requestSubmitted', { defaultValue: 'Certification request submitted to the blockchain network.' }));
   };
 
   return (
@@ -47,23 +50,23 @@ export default function BlockchainCropCertification() {
         <div className="flex justify-between items-end">
           <div>
             <h1 className="text-3xl font-bold tracking-tight flex items-center gap-3">
-              <ShieldCheck className="w-8 h-8 text-primary" /> Blockchain Certification
+              <ShieldCheck className="w-8 h-8 text-primary" /> {t('futuristic.blockchainCert.title', { defaultValue: 'Blockchain Certification' })}
             </h1>
-            <p className="text-muted-foreground mt-2">Immutable, verifiable crop provenance and organic certification.</p>
+            <p className="text-muted-foreground mt-2">{t('futuristic.blockchainCert.subtitle', { defaultValue: 'Immutable, verifiable crop provenance and organic certification.' })}</p>
           </div>
-          <Button><FileText className="w-4 h-4 mr-2" /> New Request</Button>
+          <Button><FileText className="w-4 h-4 mr-2" /> {t('blockchainCert.actions.newRequest', { defaultValue: 'New Request' })}</Button>
         </div>
 
         <Tabs defaultValue="active" className="w-full">
           <TabsList className="mb-6">
-            <TabsTrigger value="active">Active Certificates</TabsTrigger>
-            <TabsTrigger value="request">Request Certification</TabsTrigger>
-            <TabsTrigger value="verify">Verify Authenticity</TabsTrigger>
+            <TabsTrigger value="active">{t('blockchainCert.tabs.active', { defaultValue: 'Active Certificates' })}</TabsTrigger>
+            <TabsTrigger value="request">{t('blockchainCert.tabs.request', { defaultValue: 'Request Certification' })}</TabsTrigger>
+            <TabsTrigger value="verify">{t('blockchainCert.tabs.verify', { defaultValue: 'Verify Authenticity' })}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="active" className="space-y-6">
             {loading ? (
-              <div className="text-center py-12 text-muted-foreground">Loading blockchain records...</div>
+              <div className="text-center py-12 text-muted-foreground">{t('blockchainCert.active.loading', { defaultValue: 'Loading blockchain records...' })}</div>
             ) : certifications.length > 0 ? (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {certifications.map(cert => (
@@ -75,21 +78,21 @@ export default function BlockchainCropCertification() {
                     <CardContent className="p-6 grid grid-cols-3 gap-6">
                       <div className="col-span-2 space-y-4">
                         <div>
-                          <p className="text-sm text-muted-foreground">Crop</p>
+                          <p className="text-sm text-muted-foreground">{t('blockchainCert.active.crop', { defaultValue: 'Crop' })}</p>
                           <p className="font-medium">{cert.crop_type}</p>
                         </div>
                         <div>
-                          <p className="text-sm text-muted-foreground">Blockchain Hash</p>
-                          <p className="font-mono text-xs text-primary truncate">{cert.blockchain_hash || 'Pending...'}</p>
+                          <p className="text-sm text-muted-foreground">{t('blockchainCert.active.hash', { defaultValue: 'Blockchain Hash' })}</p>
+                          <p className="font-mono text-xs text-primary truncate">{cert.blockchain_hash || t('blockchainCert.active.pending', { defaultValue: 'Pending...' })}</p>
                         </div>
                         <div className="flex gap-2 pt-4">
-                          <Button size="sm" variant="outline"><Download className="w-4 h-4 mr-2" /> PDF</Button>
-                          <Button size="sm" variant="outline"><Share2 className="w-4 h-4 mr-2" /> Share</Button>
+                          <Button size="sm" variant="outline"><Download className="w-4 h-4 mr-2" /> {t('blockchainCert.active.pdf', { defaultValue: 'PDF' })}</Button>
+                          <Button size="sm" variant="outline"><Share2 className="w-4 h-4 mr-2" /> {t('blockchainCert.active.share', { defaultValue: 'Share' })}</Button>
                         </div>
                       </div>
                       <div className="flex flex-col items-center justify-center bg-white p-2 rounded-lg">
                         <QRCodeSVG value={`https://verify.smartcrop.app/cert/${cert.certificate_id}`} size={100} />
-                        <span className="text-[10px] text-muted-foreground mt-2 text-center">Scan to verify</span>
+                        <span className="text-[10px] text-muted-foreground mt-2 text-center">{t('blockchainCert.active.scanToVerify', { defaultValue: 'Scan to verify' })}</span>
                       </div>
                     </CardContent>
                   </Card>
@@ -99,8 +102,8 @@ export default function BlockchainCropCertification() {
               <Card>
                 <CardContent className="flex flex-col items-center justify-center py-16 text-center">
                   <ShieldCheck className="w-16 h-16 text-muted-foreground/30 mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">No Active Certificates</h3>
-                  <p className="text-muted-foreground max-w-md">You haven't acquired any blockchain-verified certificates yet. Request one to prove your crop's provenance.</p>
+                  <h3 className="text-xl font-semibold mb-2">{t('blockchainCert.active.noneTitle', { defaultValue: 'No Active Certificates' })}</h3>
+                  <p className="text-muted-foreground max-w-md">{t('blockchainCert.active.noneMessage', { defaultValue: "You haven't acquired any blockchain-verified certificates yet. Request one to prove your crop's provenance." })}</p>
                 </CardContent>
               </Card>
             )}
@@ -109,39 +112,39 @@ export default function BlockchainCropCertification() {
           <TabsContent value="request">
             <Card className="max-w-2xl mx-auto">
               <CardHeader>
-                <CardTitle>Request New Certification</CardTitle>
-                <CardDescription>Submit your farm data for decentralized verification.</CardDescription>
+                <CardTitle>{t('blockchainCert.request.title', { defaultValue: 'Request New Certification' })}</CardTitle>
+                <CardDescription>{t('blockchainCert.request.description', { defaultValue: 'Submit your farm data for decentralized verification.' })}</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleRequest} className="space-y-4">
                   <div className="space-y-2">
-                    <Label>Certification Type</Label>
+                    <Label>{t('blockchainCert.request.certType', { defaultValue: 'Certification Type' })}</Label>
                     <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
-                      <option>Organic Certified (USDA)</option>
-                      <option>Fair Trade</option>
-                      <option>Carbon Neutral</option>
-                      <option>Non-GMO Project Verified</option>
+                      <option>{t('blockchainCert.request.options.organic', { defaultValue: 'Organic Certified (USDA)' })}</option>
+                      <option>{t('blockchainCert.request.options.fairTrade', { defaultValue: 'Fair Trade' })}</option>
+                      <option>{t('blockchainCert.request.options.carbonNeutral', { defaultValue: 'Carbon Neutral' })}</option>
+                      <option>{t('blockchainCert.request.options.nonGmo', { defaultValue: 'Non-GMO Project Verified' })}</option>
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <Label>Target Crop</Label>
-                    <Input placeholder="e.g., Arabica Coffee" />
+                    <Label>{t('blockchainCert.request.targetCrop', { defaultValue: 'Target Crop' })}</Label>
+                    <Input placeholder={t('blockchainCert.request.targetCropPlaceholder', { defaultValue: 'e.g., Arabica Coffee' })} />
                   </div>
                   <div className="space-y-2">
-                    <Label>Supporting Documents (Lab results, soil tests)</Label>
+                    <Label>{t('blockchainCert.request.supportingDocs', { defaultValue: 'Supporting Documents (Lab results, soil tests)' })}</Label>
                     <Input type="file" multiple />
                   </div>
                   <div className="bg-muted p-4 rounded-lg mt-6">
                     <div className="flex justify-between text-sm mb-2">
-                      <span>Verification Fee (Smart Contract)</span>
+                      <span>{t('blockchainCert.request.verificationFee', { defaultValue: 'Verification Fee (Smart Contract)' })}</span>
                       <span className="font-mono">0.05 ETH</span>
                     </div>
                     <div className="flex justify-between text-sm font-bold">
-                      <span>Total</span>
+                      <span>{t('blockchainCert.request.total', { defaultValue: 'Total' })}</span>
                       <span className="font-mono">~$120.00 USD</span>
                     </div>
                   </div>
-                  <Button type="submit" className="w-full">Submit to Oracle Network</Button>
+                  <Button type="submit" className="w-full">{t('blockchainCert.request.submit', { defaultValue: 'Submit to Oracle Network' })}</Button>
                 </form>
               </CardContent>
             </Card>
@@ -151,11 +154,11 @@ export default function BlockchainCropCertification() {
             <Card className="max-w-2xl mx-auto text-center py-12">
               <CardContent className="space-y-6">
                 <QrCode className="w-16 h-16 mx-auto text-muted-foreground" />
-                <h3 className="text-xl font-semibold">Verify a Certificate</h3>
-                <p className="text-muted-foreground">Enter a certificate ID or scan a QR code to verify its authenticity on the blockchain.</p>
+                <h3 className="text-xl font-semibold">{t('blockchainCert.verify.title', { defaultValue: 'Verify a Certificate' })}</h3>
+                <p className="text-muted-foreground">{t('blockchainCert.verify.description', { defaultValue: 'Enter a certificate ID or scan a QR code to verify its authenticity on the blockchain.' })}</p>
                 <div className="flex gap-2 max-w-md mx-auto">
-                  <Input placeholder="Enter Certificate ID (e.g., CERT-8X9A...)" />
-                  <Button>Verify</Button>
+                  <Input placeholder={t('blockchainCert.verify.placeholder', { defaultValue: 'Enter Certificate ID (e.g., CERT-8X9A...)' })} />
+                  <Button>{t('blockchainCert.verify.button', { defaultValue: 'Verify' })}</Button>
                 </div>
               </CardContent>
             </Card>

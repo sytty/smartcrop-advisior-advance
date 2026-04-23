@@ -6,6 +6,8 @@
  */
 
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
 const TESTS = {
   services: [
@@ -66,13 +68,33 @@ async function runTests() {
 
   console.log('\n📋 CODE QUALITY CHECKS\n');
 
-  const checks = [
-    { name: 'App.jsx imports', status: true },
-    { name: 'AuthContext setup', status: true },
-    { name: 'Routes configuration', status: true },
-    { name: 'Component structure', status: true },
-    { name: 'Error boundaries', status: true }
-  ];
+  const checks = [];
+  const webSrc = path.join(process.cwd(), 'apps', 'web', 'src');
+
+  // Check App.jsx imports
+  const appJsx = fs.existsSync(path.join(webSrc, 'App.jsx'));
+  checks.push({ name: 'App.jsx exists', status: appJsx });
+
+  // Check AuthContext in correct location (contexts/, NOT components/)
+  const authInContexts = fs.existsSync(path.join(webSrc, 'contexts', 'AuthContext.jsx'));
+  checks.push({ name: 'AuthContext setup (contexts/)', status: authInContexts });
+
+  // Check Routes configured
+  let routesOk = false;
+  try {
+    const appContent = fs.readFileSync(path.join(webSrc, 'App.jsx'), 'utf8');
+    routesOk = appContent.includes('<Routes>') && appContent.includes('Route');
+  } catch { /* */ }
+  checks.push({ name: 'Routes configuration', status: routesOk });
+
+  // Check component structure
+  const hasHeader = fs.existsSync(path.join(webSrc, 'components', 'Header.jsx'));
+  const hasFooter = fs.existsSync(path.join(webSrc, 'components', 'Footer.jsx'));
+  checks.push({ name: 'Component structure', status: hasHeader && hasFooter });
+
+  // Check error boundaries
+  const hasErrorBoundary = fs.existsSync(path.join(webSrc, 'components', 'ErrorBoundary.jsx'));
+  checks.push({ name: 'Error boundaries', status: hasErrorBoundary });
 
   for (const check of checks) {
     const icon = check.status ? '✅' : '❌';

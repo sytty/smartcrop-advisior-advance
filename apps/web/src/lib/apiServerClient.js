@@ -103,6 +103,8 @@ const apiServerClient = {
   request,
   get: (path, options = {}) => request(path, { ...options, method: 'GET' }),
   post: (path, body, options = {}) => request(path, { ...options, method: 'POST', body }),
+  put: (path, body, options = {}) => request(path, { ...options, method: 'PUT', body }),
+  delete: (path, options = {}) => request(path, { ...options, method: 'DELETE' }),
   health: {
     check: () => request('/health', { method: 'GET' }),
     ready: () => request('/health/ready', { method: 'GET' }),

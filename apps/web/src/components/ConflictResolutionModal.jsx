@@ -22,7 +22,7 @@ const ConflictResolutionModal = ({ isOpen, onClose, conflicts, onResolve }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[600px] bg-[#0a0a0a] border-white/10 text-white glass-card">
+      <DialogContent className="sm:max-w-[600px] bg-[hsl(var(--brand-night))] border-white/10 text-white glass-card">
         <DialogHeader>
           <DialogTitle className="flex items-center text-xl">
             <AlertTriangle className="w-5 h-5 mr-2 text-yellow-500" />

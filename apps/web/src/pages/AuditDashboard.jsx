@@ -64,7 +64,7 @@ const AuditDashboard = () => {
       setLogs(records.items);
       calculateStats(records.items);
     } catch (error) {
-      console.error('Error fetching audit logs:', error);
+          console.error('Error fetching audit logs:', error);
       toast.error(t('common.error'));
     } finally {
       setLoading(false);
@@ -78,7 +78,7 @@ const AuditDashboard = () => {
       await pb.collection('audit_logs').subscribe('*', (e) => {
         if (e.action === 'create') {
           setLogs(prev => [e.record, ...prev].slice(0, 50));
-          toast.info(`New transaction logged: ${e.record.action_type}`);
+          toast.info(t('audit.newTransaction', { action: e.record.action_type, defaultValue: `New transaction logged: ${e.record.action_type}` }));
         }
       });
     };
@@ -94,17 +94,24 @@ const AuditDashboard = () => {
       const result = await verifyChain();
       setIntegrityResult(result);
       if (result.isValid) {
-        toast.success('Blockchain integrity verified. No tampering detected.');
+        toast.success(t('audit.integrityVerified', { defaultValue: 'Blockchain integrity verified. No tampering detected.' }));
       } else {
-        toast.error(`Integrity check failed! Found ${result.brokenLinks.length} broken links.`);
+        toast.error(t('audit.integrityFailed', { count: result.brokenLinks.length, defaultValue: `Integrity check failed! Found ${result.brokenLinks.length} broken links.` }));
       }
     } catch (error) {
-      toast.error('Failed to run integrity check');
+      toast.error(t('audit.integrityRunFailed', { defaultValue: 'Failed to run integrity check' }));
     }
   };
 
   const handleExportCSV = () => {
-    const headers = ['Transaction ID', 'Action Type', 'Farmer ID', 'Timestamp', 'Verified', 'Data Hash'];
+    const headers = [
+      t('audit.csv.transactionId', { defaultValue: 'Transaction ID' }),
+      t('audit.csv.actionType', { defaultValue: 'Action Type' }),
+      t('audit.csv.farmerId', { defaultValue: 'Farmer ID' }),
+      t('audit.csv.timestamp', { defaultValue: 'Timestamp' }),
+      t('audit.csv.verified', { defaultValue: 'Verified' }),
+      t('audit.csv.dataHash', { defaultValue: 'Data Hash' }),
+    ];
     const csvContent = [
       headers.join(','),
       ...logs.map(log => 
@@ -120,7 +127,7 @@ const AuditDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet>
         <title>{t('admin.blockchain_audit.title')} - Smart Crop Advisor</title>
       </Helmet>

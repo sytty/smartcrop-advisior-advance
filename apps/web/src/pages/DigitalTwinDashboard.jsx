@@ -165,11 +165,11 @@ const DigitalTwinDashboardContent = () => {
           </div>
         </div>
 
-        <div className="h-[600px] w-full bg-[#0a0a0a]">
+        <div className="h-[600px] w-full bg-[hsl(var(--brand-night))]">
           <MapContainer 
             center={[22.5937, 78.9629]} 
             zoom={5} 
-            style={{ height: '100%', width: '100%', background: '#0a0a0a' }}
+            style={{ height: '100%', width: '100%', background: 'hsl(var(--brand-night))' }}
             zoomControl={false}
           >
             <TileLayer
@@ -192,7 +192,7 @@ const DigitalTwinDashboardContent = () => {
                 }}
               >
                 <Tooltip className="custom-tooltip" direction="top" offset={[0, -10]} opacity={1}>
-                  <div className="p-2 bg-[#0a0a0a] border border-white/10 rounded-lg shadow-xl min-w-[150px]">
+                  <div className="p-2 bg-[hsl(var(--brand-night))] border border-white/10 rounded-lg shadow-xl min-w-[150px]">
                     <p className="font-bold text-white mb-1">{field.name}</p>
                     <p className="text-xs text-gray-400 mb-2">{field.region}</p>
                     <div className="flex justify-between items-center text-sm">
@@ -219,7 +219,7 @@ const DigitalTwinDashboardContent = () => {
 const DigitalTwinDashboard = () => {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet>
         <title>{t('monitoring.digital_twin.title')} - Smart Crop Advisor</title>
       </Helmet>

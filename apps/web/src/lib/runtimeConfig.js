@@ -13,11 +13,16 @@ const runtimeConfig = {
     import.meta.env.VITE_API_URL || import.meta.env.VITE_API_SERVER_URL,
     '/hcgi/api',
   ),
+  mlApiUrl: normalizeBaseUrl(
+    import.meta.env.VITE_ML_API_URL || import.meta.env.VITE_API_URL || import.meta.env.VITE_API_SERVER_URL,
+    '/hcgi/api',
+  ),
   pocketbaseUrl: normalizeBaseUrl(
     import.meta.env.VITE_POCKETBASE_URL,
     'http://127.0.0.1:8090',
   ),
   requestTimeoutMs: parseInteger(import.meta.env.VITE_REQUEST_TIMEOUT_MS, 8000),
+  mlRequestTimeoutMs: parseInteger(import.meta.env.VITE_ML_REQUEST_TIMEOUT_MS, 12000),
   backendStatusPollMs: parseInteger(import.meta.env.VITE_BACKEND_STATUS_POLL_MS, 30000),
 };
 

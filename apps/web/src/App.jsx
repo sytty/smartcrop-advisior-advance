@@ -76,6 +76,10 @@ const AnalyticsDashboard = lazy(() => import('./pages/AnalyticsDashboard.jsx'));
 const HelpAndSupportPage = lazy(() => import('./pages/HelpAndSupportPage.jsx'));
 const DataManagementPage = lazy(() => import('./pages/DataManagementPage.jsx'));
 const IntegrationPage = lazy(() => import('./pages/IntegrationPage.jsx'));
+const FieldManagement = lazy(() => import('./pages/FieldManagement.jsx'));
+const CropManagement = lazy(() => import('./pages/CropManagement.jsx'));
+const ProfileSettings = lazy(() => import('./pages/ProfileSettings.jsx'));
+const PHCalculator = lazy(() => import('./pages/PHCalculator.jsx'));
 
 // Documentation Layout (Lazy)
 const DocumentationLayout = lazy(() => import('./components/DocumentationLayout.jsx'));
@@ -83,7 +87,7 @@ const DocumentationHub = lazy(() => import('./pages/docs/DocumentationHub.jsx'))
 
 const AppContent = () => {
   const location = useLocation();
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const isPublicPage = ['/', '/pricing', '/contact'].includes(location.pathname);
 
   useEffect(() => {
@@ -173,6 +177,13 @@ const AppContent = () => {
             <Route path="/help" element={<ProtectedRoute><HelpAndSupportPage /></ProtectedRoute>} />
             <Route path="/data-management" element={<ProtectedRoute><DataManagementPage /></ProtectedRoute>} />
             <Route path="/integrations" element={<ProtectedRoute><IntegrationPage /></ProtectedRoute>} />
+            <Route path="/fields" element={<ProtectedRoute><FieldManagement /></ProtectedRoute>} />
+            <Route path="/field-management" element={<ProtectedRoute><FieldManagement /></ProtectedRoute>} />
+            <Route path="/crops" element={<ProtectedRoute><CropManagement /></ProtectedRoute>} />
+            <Route path="/crop-management" element={<ProtectedRoute><CropManagement /></ProtectedRoute>} />
+            <Route path="/crop-managment" element={<ProtectedRoute><CropManagement /></ProtectedRoute>} />
+            <Route path="/settings" element={<ProtectedRoute><ProfileSettings /></ProtectedRoute>} />
+            <Route path="/ph-calculator" element={<ProtectedRoute><PHCalculator /></ProtectedRoute>} />
 
             {/* Admin Routes */}
             <Route path="/admin-dashboard" element={<ProtectedRoute requireAdmin={true}><AdminDashboard /></ProtectedRoute>} />
@@ -183,11 +194,11 @@ const AppContent = () => {
             <Route path="/farmer-performance" element={<ProtectedRoute requireAdmin={true}><FarmerPerformanceMetrics /></ProtectedRoute>} />
 
             <Route path="*" element={
-              <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+              <div className="min-h-screen analytics-theme-bg flex items-center justify-center">
                 <div className="text-center">
                   <h1 className="text-6xl font-bold text-white mb-4">404</h1>
-                  <p className="text-xl text-gray-400 mb-8">Page not found</p>
-                  <a href="/" className="text-[#00d4ff] hover:underline">Back to home</a>
+                  <p className="text-xl text-gray-400 mb-8">{t('errorPages.notFound', { defaultValue: 'Page not found' })}</p>
+                  <a href="/" className="text-[#00d4ff] hover:underline">{t('errorPages.backHome', { defaultValue: 'Back to home' })}</a>
                 </div>
               </div>
             } />

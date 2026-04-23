@@ -135,7 +135,7 @@ const DiseaseDetectionAdvancedContent = () => {
     }
 
     if (syncedCount > 0) {
-      toast.success(`${syncedCount} offline diagnosis${syncedCount > 1 ? 'es' : ''} synced successfully`);
+      toast.success(t('diseaseDetection.synced', { count: syncedCount, defaultValue: `${syncedCount} offline diagnosis${syncedCount > 1 ? 'es' : ''} synced successfully` }));
       await loadRecentDiagnoses();
     }
 
@@ -145,12 +145,12 @@ const DiseaseDetectionAdvancedContent = () => {
 
   const applyImageFile = (file) => {
     if (!file.type.startsWith('image/')) {
-      toast.error('Please upload an image file only.');
+      toast.error(t('diseaseDetection.imageOnly', { defaultValue: 'Please upload an image file only.' }));
       return;
     }
 
     if (file.size > MAX_IMAGE_SIZE_BYTES) {
-      toast.error('Image is too large. Max size is 8MB.');
+      toast.error(t('diseaseDetection.imageTooLarge', { defaultValue: 'Image is too large. Max size is 8MB.' }));
       return;
     }
 
@@ -184,7 +184,7 @@ const DiseaseDetectionAdvancedContent = () => {
     if (!currentUser?.id) return;
 
     const handleOnline = () => {
-      toast.info('Connection restored. Syncing offline diagnoses...');
+      toast.info(t('diseaseDetection.connectionRestored', { defaultValue: 'Connection restored. Syncing offline diagnoses...' }));
       syncCachedDiagnoses();
     };
 

@@ -38,7 +38,7 @@ const SubsidyPortal = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card rounded-[2rem] p-6 md:p-8 mb-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground mb-1">Subsidy Operations</p>
+              <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground mb-1">{t('subsidyPortal.operationsLabel', { defaultValue: 'Subsidy Operations' })}</p>
               <h1 className="text-3xl font-bold text-foreground mb-2 flex items-center">
                 <FileText className="w-8 h-8 mr-3 text-primary" />
                 {t('enterprise.subsidyPortal.title')}
@@ -48,7 +48,7 @@ const SubsidyPortal = () => {
 
             <div className="flex items-center gap-2">
               <span className="elevated-card rounded-full px-3 py-1.5 text-sm text-muted-foreground">
-                Applications: <span className="text-foreground font-semibold">{applications.length}</span>
+                {t('subsidyPortal.applicationsCount', { defaultValue: 'Applications' })}: <span className="text-foreground font-semibold">{applications.length}</span>
               </span>
               <Button asChild className="bg-gradient-electric text-white border-0 hover:brightness-110 rounded-xl">
                 <Link to="/subsidy-verification">
@@ -94,7 +94,7 @@ const SubsidyPortal = () => {
                           <div className="rounded-2xl border border-dashed border-border/70 bg-card/60 px-6 py-10">
                             <FileText className="w-10 h-10 mx-auto mb-3 text-primary/60" />
                             <p className="font-semibold text-foreground mb-1">{t('enterprise.subsidyPortal.noApps')}</p>
-                            <p className="text-sm text-muted-foreground">Your subsidy submissions will appear here after you start an application.</p>
+                            <p className="text-sm text-muted-foreground">{t('subsidyPortal.noAppsDetail', { defaultValue: 'Your subsidy submissions will appear here after you start an application.' })}</p>
                           </div>
                         </td>
                       </tr>
@@ -193,7 +193,7 @@ const SubsidyPortal = () => {
                   </div>
                   <div className="bg-card/70 p-4 rounded-xl border border-border/70">
                     <p className="text-xs text-muted-foreground mb-1">{t('enterprise.subsidyPortal.landSize')}</p>
-                    <p className="text-foreground font-medium">{selectedApp.land_size} Hectares</p>
+                    <p className="text-foreground font-medium">{selectedApp.land_size} {t('subsidyPortal.hectares', { defaultValue: 'Hectares' })}</p>
                   </div>
                   <div className="bg-card/70 p-4 rounded-xl border border-border/70">
                     <p className="text-xs text-muted-foreground mb-1">{t('enterprise.subsidyPortal.appDate')}</p>

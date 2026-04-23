@@ -16,7 +16,7 @@ import DocumentUploadZone from '@/components/DocumentUploadZone.jsx';
 import SubsidyCalculator from '@/components/SubsidyCalculator.jsx';
 import { useTranslation } from 'react-i18next';
 
-const cropTypes = ['Wheat', 'Rice', 'Cotton', 'Sugarcane', 'Maize'];
+const cropTypes = ['wheat', 'rice', 'cotton', 'sugarcane', 'maize'];
 
 const SubsidyVerification = () => {
   const { t } = useTranslation();
@@ -106,7 +106,7 @@ const SubsidyVerification = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet>
         <title>{t('admin.subsidyVerification.title')} - Smart Crop Advisor</title>
       </Helmet>
@@ -141,7 +141,7 @@ const SubsidyVerification = () => {
                       </SelectTrigger>
                       <SelectContent className="glass-card border-white/10">
                         {cropTypes.map(crop => (
-                          <SelectItem key={crop} value={crop} className="text-white hover:bg-white/10">{crop}</SelectItem>
+                          <SelectItem key={crop} value={crop} className="text-white hover:bg-white/10">{t(`subsidyVerification.crops.${crop}`, { defaultValue: crop.charAt(0).toUpperCase() + crop.slice(1) })}</SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
@@ -157,7 +157,7 @@ const SubsidyVerification = () => {
                       onChange={handleInputChange} 
                       required
                       className="bg-black/40 border-white/10 text-white placeholder:text-gray-600" 
-                      placeholder="e.g. 2.5"
+                      placeholder={t('subsidyVerification.placeholders.landSize', { defaultValue: 'e.g. 2.5' })}
                     />
                   </div>
 
@@ -169,7 +169,7 @@ const SubsidyVerification = () => {
                       value={formData.yieldData} 
                       onChange={handleInputChange} 
                       className="bg-black/40 border-white/10 text-white placeholder:text-gray-600" 
-                      placeholder="e.g. 5000"
+                      placeholder={t('subsidyVerification.placeholders.expectedYield', { defaultValue: 'e.g. 5000' })}
                     />
                   </div>
 
@@ -182,7 +182,7 @@ const SubsidyVerification = () => {
                       onChange={handleInputChange} 
                       required
                       className="bg-black/40 border-white/10 text-white placeholder:text-gray-600" 
-                      placeholder="Enter account number for direct transfer"
+                      placeholder={t('subsidyVerification.placeholders.bankAccount', { defaultValue: 'Enter account number for direct transfer' })}
                     />
                   </div>
                 </div>

@@ -54,7 +54,7 @@ const ContactPage = () => {
           >
             <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary mb-5">
               <Sparkles className="w-4 h-4 mr-2" />
-              We typically respond in under 24 hours
+              {t('contact.responseTime', { defaultValue: 'We typically respond in under 24 hours' })}
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4" style={{ letterSpacing: '-0.02em' }}>
@@ -81,7 +81,7 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="rounded-xl border-border/80 bg-card/70 text-foreground placeholder:text-muted-foreground"
-                      placeholder="Maya Chen"
+                      placeholder={t('contact.namePlaceholder', { defaultValue: 'Maya Chen' })}
                     />
                   </div>
 
@@ -97,7 +97,7 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="rounded-xl border-border/80 bg-card/70 text-foreground placeholder:text-muted-foreground"
-                      placeholder="maya@example.com"
+                      placeholder={t('contact.emailPlaceholder', { defaultValue: 'maya@example.com' })}
                     />
                   </div>
 
@@ -113,7 +113,7 @@ const ContactPage = () => {
                       value={formData.farm}
                       onChange={handleChange}
                       className="rounded-xl border-border/80 bg-card/70 text-foreground placeholder:text-muted-foreground"
-                      placeholder="12.5"
+                      placeholder={t('contact.farmPlaceholder', { defaultValue: '12.5' })}
                     />
                   </div>
 
@@ -129,7 +129,7 @@ const ContactPage = () => {
                       onChange={handleChange}
                       rows={6}
                       className="rounded-xl border-border/80 bg-card/70 text-foreground placeholder:text-muted-foreground"
-                      placeholder="I'm interested in monitoring my coffee plantation..."
+                      placeholder={t('contact.messagePlaceholder', { defaultValue: "I'm interested in monitoring my coffee plantation..." })}
                     />
                   </div>
 
@@ -139,7 +139,7 @@ const ContactPage = () => {
                     className="w-full bg-gradient-electric text-white hover:brightness-110 transition-all duration-200 active:scale-[0.98] glow-electric disabled:opacity-50 disabled:cursor-not-allowed rounded-xl"
                     size="lg"
                   >
-                    {isSubmitting ? t('contact.sending') : t('contact.send')}
+                    {isSubmitting ? t('contact.sending', { defaultValue: 'Sending...' }) : t('contact.send', { defaultValue: 'Send message' })}
                   </Button>
                 </form>
               </GlassCard>
@@ -152,7 +152,7 @@ const ContactPage = () => {
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Email</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{t('contact.emailLabel', { defaultValue: 'Email' })}</h3>
                     <p className="text-muted-foreground">{t('footer.email')}</p>
                   </div>
                 </div>
@@ -164,7 +164,7 @@ const ContactPage = () => {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Phone</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{t('contact.phoneLabel', { defaultValue: 'Phone' })}</h3>
                     <p className="text-muted-foreground">{t('footer.phone')}</p>
                   </div>
                 </div>
@@ -176,10 +176,10 @@ const ContactPage = () => {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Office</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{t('contact.officeLabel', { defaultValue: 'Office' })}</h3>
                     <p className="text-muted-foreground">
-                      Agricultural Innovation Hub<br />
-                      Nairobi, Kenya
+                      {t('contact.officeName', { defaultValue: 'Agricultural Innovation Hub' })}<br />
+                      {t('contact.officeLocation', { defaultValue: 'Nairobi, Kenya' })}
                     </p>
                   </div>
                 </div>

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, PieChart, Pie, Cell } from 'recharts';
 import { Activity, Download, Droplets, FlaskConical, Leaf } from 'lucide-react';
-import { generateSoilHealthData } from '@/lib/mockData.js';
+import mlModelService from '@/lib/mlModelService.js';
 import { Button } from '@/components/ui/button';
 import ErrorBoundary from '@/components/ErrorBoundary.jsx';
 import GlassCard from '@/components/GlassCard.jsx';
@@ -34,13 +34,11 @@ const SoilHealthAnalyticsContent = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        await new Promise(resolve => setTimeout(resolve, 600));
+        const inference = await mlModelService.infer('soil_health_analytics');
         if (!mounted) return;
-        
-        const mockData = generateSoilHealthData();
-        if (!mockData || mockData.length === 0) throw new Error("Failed to load soil data");
-        
-        setData(mockData);
+        if (!inference.rows || inference.rows.length === 0) throw new Error('Failed to load soil data');
+
+        setData(inference.rows);
       } catch (err) {
         console.error("SoilHealth Error:", err);
         if (mounted) setError(err.message);
@@ -188,7 +186,7 @@ const SoilHealthAnalyticsContent = () => {
 const SoilHealthAnalytics = () => {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet><title>{t('analytics.soil.title')} - Smart Crop Advisor</title></Helmet>
       <ErrorBoundary componentName="SoilHealthAnalytics">
         <SoilHealthAnalyticsContent />

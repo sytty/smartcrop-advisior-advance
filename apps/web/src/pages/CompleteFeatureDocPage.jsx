@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { BookOpen, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import GlassCard from '@/components/GlassCard.jsx';
 import { completeFeatureDoc } from '@/lib/completeFeatureDoc';
 
 const CompleteFeatureDocPage = () => {
+  const { t } = useTranslation();
   const [docs, setDocs] = useState([]);
 
   useEffect(() => {
@@ -13,8 +15,8 @@ const CompleteFeatureDocPage = () => {
   return (
     <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">Complete Feature Documentation</h1>
-        <p className="text-gray-400">Detailed breakdown of all 40+ system features and capabilities.</p>
+        <h1 className="text-3xl font-bold text-white mb-2">{t('documentation.completeFeatures.title', { defaultValue: 'Complete Feature Documentation' })}</h1>
+        <p className="text-gray-400">{t('documentation.completeFeatures.subtitle', { defaultValue: 'Detailed breakdown of all 40+ system features and capabilities.' })}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

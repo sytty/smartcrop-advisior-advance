@@ -61,7 +61,7 @@ class ErrorBoundaryComponent extends React.Component {
 
             <div className="flex gap-4 justify-end">
               <Button 
-                onClick={() => window.location.href = '/error-reporting'} 
+                onClick={() => window.location.href = '/help'} 
                 variant="outline"
                 className="border-red-500/30 text-red-400 hover:bg-red-500/10"
               >

@@ -49,7 +49,7 @@ const SubsidyAdmin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
+    <div className="min-h-screen analytics-theme-bg pt-24 pb-12 px-4 sm:px-6 lg:px-8 noise-overlay">
       <Helmet>
         <title>Subsidy Administration - Smart Crop Advisor</title>
       </Helmet>
@@ -158,7 +158,7 @@ const SubsidyAdmin = () => {
               initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }}
               className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto glass-card rounded-2xl border border-white/10 shadow-2xl flex flex-col"
             >
-              <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur-md">
+              <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-white/10 bg-[hsl(var(--brand-night))]/80 backdrop-blur-md">
                 <h2 className="text-xl font-bold text-white">Review Application</h2>
                 <button onClick={() => setSelectedApp(null)} className="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg">
                   <X className="w-5 h-5" />

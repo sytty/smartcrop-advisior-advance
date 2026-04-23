@@ -12,15 +12,24 @@ function normalizePocketBaseError(error) {
 
 async function checkPocketBaseBrowserHealth() {
   const startedAt = Date.now();
-  const response = await fetch(`${runtimeConfig.pocketbaseUrl}/api/health`, {
-    method: 'GET',
-  });
+  try {
+    const response = await fetch(`${runtimeConfig.pocketbaseUrl}/api/health`, {
+      method: 'GET',
+    });
 
-  return {
-    connected: response.ok,
-    latencyMs: Date.now() - startedAt,
-    url: runtimeConfig.pocketbaseUrl,
-  };
+    return {
+      connected: response.ok,
+      latencyMs: Date.now() - startedAt,
+      url: runtimeConfig.pocketbaseUrl,
+    };
+  } catch {
+    return {
+      connected: false,
+      latencyMs: Date.now() - startedAt,
+      url: runtimeConfig.pocketbaseUrl,
+      error: 'PocketBase is unreachable',
+    };
+  }
 }
 
 const pocketbaseClient = new Pocketbase(runtimeConfig.pocketbaseUrl);

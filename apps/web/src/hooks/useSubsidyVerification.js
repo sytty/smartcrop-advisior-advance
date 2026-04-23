@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import pb from '@/lib/pocketbaseClient';
 import { generateSubsidyEligibility, generateSubsidyApplications } from '@/lib/mockData.js';
+import mlModelService from '@/lib/mlModelService.js';
 
 export const useSubsidyVerification = () => {
   const [loading, setLoading] = useState(false);
@@ -39,10 +40,20 @@ export const useSubsidyVerification = () => {
         failed.push('Already received subsidy in the current cycle');
       }
 
+      const scoring = await mlModelService.infer('subsidy_verification', {
+        farmerId,
+        landSize,
+        cropType,
+        income,
+      });
+
       return {
         isEligible: failed.length === 0,
         failed,
-        criteria
+        criteria,
+        eligibilityScore: scoring.eligibilityScore,
+        riskBand: scoring.riskBand,
+        modelConfidence: scoring.confidence,
       };
     } catch (error) {
       console.error('Eligibility check failed:', error);

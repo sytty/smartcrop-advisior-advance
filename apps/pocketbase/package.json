@@ -7,6 +7,7 @@
     "dev": "node ./scripts/pocketbase-runner.mjs serve --http=0.0.0.0:8090 --encryptionEnv=PB_ENCRYPTION_KEY --hooksWatch=false",
     "start": "node ./scripts/pocketbase-runner.mjs serve --http=0.0.0.0:8090 --encryptionEnv=PB_ENCRYPTION_KEY --dir=/data --migrationsDir=./pb_migrations --hooksDir=./pb_hooks --hooksWatch=false",
     "health": "node ./scripts/healthcheck.mjs",
+    "monitor": "node ./scripts/monitor.mjs",
     "migrations:up": "node ./scripts/pocketbase-runner.mjs horizons migrations:up --encryptionEnv=PB_ENCRYPTION_KEY --dir=/data --migrationsDir=./pb_migrations --hooksDir=./pb_hooks --hooksWatch=false",
     "migrations:revert": "node ./scripts/pocketbase-runner.mjs horizons migrations:revert --encryptionEnv=PB_ENCRYPTION_KEY --dir=/data --migrationsDir=./pb_migrations --hooksDir=./pb_hooks --hooksWatch=false",
     "migrations:snapshot": "node ./scripts/pocketbase-runner.mjs snapshot --encryptionEnv=PB_ENCRYPTION_KEY --dir=/data --migrationsDir=./pb_snapshots",

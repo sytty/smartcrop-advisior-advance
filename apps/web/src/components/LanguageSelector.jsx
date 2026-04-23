@@ -23,7 +23,7 @@ const languages = [
 ];
 
 const LanguageSelector = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [focusedIndex, setFocusedIndex] = useState(-1);
@@ -102,14 +102,15 @@ const LanguageSelector = () => {
     <div className="relative" ref={dropdownRef} onKeyDown={handleKeyDown}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-xl glass-card hover:border-[#00d4ff]/50 transition-all duration-300 group focus-visible:ring-2 focus-visible:ring-[#00d4ff] focus-visible:outline-none"
+        className="flex items-center gap-2 px-3 py-2 rounded-xl border border-border/70 bg-card/80 hover:border-primary/50 transition-all duration-300 group focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
         aria-haspopup="listbox"
         aria-expanded={isOpen}
-        aria-label={`Select Language. Current language is ${currentLang.name}`}
+        aria-label={t('language.selectorAria', { defaultValue: `Select Language. Current language is ${currentLang.name}` })}
       >
-        <Globe className="w-4 h-4 text-[#00d4ff] group-hover:animate-pulse" />
-        <span className="text-sm font-medium text-white hidden sm:block">{currentLang.native}</span>
-        <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        <Globe className="w-4 h-4 text-primary group-hover:animate-pulse" />
+        <span className="text-xs sm:text-sm font-medium text-foreground">{currentLang.code.toUpperCase()}</span>
+        <span className="text-sm font-medium text-foreground hidden lg:block">{t('common.language', { defaultValue: 'Language' })}</span>
+        <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       <AnimatePresence>
@@ -119,31 +120,31 @@ const LanguageSelector = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 mt-2 w-72 glass-card-neon rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col"
+            className="absolute right-0 mt-2 w-72 glass-card rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col"
             role="listbox"
-            aria-label="Language options"
+            aria-label={t('language.optionsAria', { defaultValue: 'Language options' })}
           >
-            <div className="p-3 border-b border-white/10 bg-black/40" dir="ltr">
+            <div className="p-3 border-b border-border/70 bg-card/90" dir="ltr">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <input
                   ref={searchInputRef}
                   type="text"
-                  placeholder="Search languages..."
+                  placeholder={t('language.searchPlaceholder', { defaultValue: 'Search languages...' })}
                   value={searchQuery}
                   onChange={(e) => {
                     setSearchQuery(e.target.value);
                     setFocusedIndex(-1);
                   }}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#00d4ff]/50 transition-colors"
-                  aria-label="Search languages"
+                  className="w-full bg-background border border-border rounded-lg pl-9 pr-4 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
+                  aria-label={t('language.searchAria', { defaultValue: 'Search languages' })}
                 />
               </div>
             </div>
             
             <div className="max-h-80 overflow-y-auto p-2 custom-scrollbar" dir="ltr">
               {filteredLanguages.length === 0 ? (
-                <div className="p-4 text-center text-sm text-gray-500">No languages found</div>
+                <div className="p-4 text-center text-sm text-muted-foreground">{t('language.noneFound', { defaultValue: 'No languages found' })}</div>
               ) : (
                 <div className="grid grid-cols-1 gap-1">
                   {filteredLanguages.map((lang, index) => {
@@ -158,10 +159,10 @@ const LanguageSelector = () => {
                         onMouseEnter={() => setFocusedIndex(index)}
                         className={`flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
                           isSelected 
-                            ? 'bg-[#00d4ff]/10 text-[#00d4ff] border border-[#00d4ff]/30' 
+                            ? 'bg-primary/10 text-primary border border-primary/30' 
                             : isFocused
-                              ? 'bg-white/10 text-white border border-white/20'
-                              : 'text-gray-300 hover:bg-white/10 hover:text-white border border-transparent'
+                              ? 'bg-muted text-foreground border border-border'
+                              : 'text-foreground/80 hover:bg-muted hover:text-foreground border border-transparent'
                         }`}
                       >
                         <div className="flex items-center gap-3">
@@ -178,8 +179,8 @@ const LanguageSelector = () => {
                 </div>
               )}
             </div>
-            <div className="p-2 border-t border-white/10 bg-black/40 text-center" dir="ltr">
-              <span className="text-xs text-gray-500 font-medium tracking-wider uppercase">16 Languages Available</span>
+            <div className="p-2 border-t border-border/70 bg-card/90 text-center" dir="ltr">
+              <span className="text-xs text-muted-foreground font-medium tracking-wider uppercase">{t('language.availableCount', { count: languages.length, defaultValue: `${languages.length} Languages Available` })}</span>
             </div>
           </motion.div>
         )}

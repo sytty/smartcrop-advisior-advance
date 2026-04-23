@@ -30,7 +30,7 @@ const TutorialModal = () => {
         
         <motion.div 
           initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 20 }}
-          className="bg-[#0a0a0a] border border-[#00d4ff]/50 shadow-[0_0_50px_rgba(0,212,255,0.2)] rounded-2xl w-full max-w-lg relative z-10 pointer-events-auto overflow-hidden"
+          className="bg-[hsl(var(--brand-night))] border border-[#00d4ff]/50 shadow-[0_0_50px_rgba(0,212,255,0.2)] rounded-2xl w-full max-w-lg relative z-10 pointer-events-auto overflow-hidden"
         >
           <div className="h-2 bg-white/10 w-full">
             <div className="h-full bg-[#00d4ff] transition-all duration-300" style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }} />
