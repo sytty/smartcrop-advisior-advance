@@ -1,4 +1,4 @@
-# Hostinger Horizons
+
 
 AI-powered smart agriculture platform that unifies farm operations, predictive intelligence, and real-time monitoring into one production-ready system.
 
